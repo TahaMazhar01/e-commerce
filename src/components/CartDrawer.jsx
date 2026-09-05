@@ -100,7 +100,7 @@ export default function CartDrawer() {
           <div className="shipping-progress-text">
             <span>
               {shippingRemaining === 0 ? (
-                <strong style={{ color: "var(--accent-champagne)" }}>
+                <strong style={{ color: "var(--accent-amethyst)" }}>
                   🎉 Complimentary Express Shipping Unlocked!
                 </strong>
               ) : (
@@ -133,7 +133,7 @@ export default function CartDrawer() {
                   alignItems: "center",
                   justifyContent: "center",
                   margin: "0 auto 1.2rem",
-                  color: "var(--accent-champagne)"
+                  color: "var(--accent-amethyst)"
                 }}
               >
                 <ShoppingBag size={24} />
@@ -249,7 +249,7 @@ export default function CartDrawer() {
                 style={{
                   fontSize: "0.75rem",
                   marginBottom: "0.8rem",
-                  color: promoMessage.isError ? "#FF5A79" : "#4EBA6F",
+                  color: promoMessage.isError ? "var(--state-error)" : "var(--state-success)",
                   display: "flex",
                   alignItems: "center",
                   gap: "0.3rem"
@@ -267,7 +267,7 @@ export default function CartDrawer() {
             </div>
 
             {discountPercent > 0 && (
-              <div className="summary-row" style={{ color: "var(--accent-rose)" }}>
+              <div className="summary-row" style={{ color: "var(--accent-blush)" }}>
                 <span>Private Client Discount ({discountPercent}%)</span>
                 <span>-${discountAmount.toFixed(2)}</span>
               </div>
@@ -280,7 +280,7 @@ export default function CartDrawer() {
 
             <div className="summary-row summary-total">
               <span>Estimated Total</span>
-              <span style={{ color: "var(--accent-champagne)" }}>${cartTotal.toFixed(2)}</span>
+              <span style={{ color: "var(--accent-amethyst)" }}>${cartTotal.toFixed(2)}</span>
             </div>
 
             <button
@@ -303,7 +303,7 @@ export default function CartDrawer() {
                 color: "var(--text-muted)"
               }}
             >
-              <ShieldCheck size={13} style={{ color: "var(--accent-champagne)" }} />
+              <ShieldCheck size={13} style={{ color: "var(--accent-amethyst)" }} />
               <span>256-bit Encrypted Discreet Checkout</span>
             </div>
           </div>

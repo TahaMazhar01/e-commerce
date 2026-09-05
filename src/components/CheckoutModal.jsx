@@ -10,18 +10,18 @@ export default function CheckoutModal() {
 
   const [step, setStep] = useState(1); // 1: Shipping, 2: Payment, 3: Success
   const [formData, setFormData] = useState({
-    firstName: "Alexander",
-    lastName: "Wright",
-    email: "alexander.wright@luxurymail.com",
-    address: "740 Park Avenue, Apt 14B",
-    city: "New York",
-    state: "NY",
-    zip: "10021",
+    firstName: "",
+    lastName: "",
+    email: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
     country: "United States",
     paymentMethod: "card",
-    cardNumber: "•••• •••• •••• 4242",
-    cardExp: "08/28",
-    cardCvc: "892"
+    cardNumber: "",
+    cardExp: "",
+    cardCvc: ""
   });
 
   const [orderNumber, setOrderNumber] = useState("");
@@ -48,7 +48,7 @@ export default function CheckoutModal() {
           particleCount: 120,
           spread: 80,
           origin: { y: 0.6 },
-          colors: ["#E6D5C3", "#C59B88", "#FFFFFF", "#D6BC97"]
+          colors: ["#9c89b8", "#f0a6ca", "#efc3e6", "#b8bedd"]
         });
       } catch (err) {
         console.warn("Confetti error", err);
@@ -107,7 +107,7 @@ export default function CheckoutModal() {
               >
                 <span
                   style={{
-                    color: step >= 1 ? "var(--accent-champagne)" : "var(--text-muted)",
+                    color: step >= 1 ? "var(--accent-amethyst)" : "var(--text-muted)",
                     fontWeight: step === 1 ? 700 : 400
                   }}
                 >
@@ -116,7 +116,7 @@ export default function CheckoutModal() {
                 <span style={{ color: "var(--border-active)" }}>→</span>
                 <span
                   style={{
-                    color: step >= 2 ? "var(--accent-champagne)" : "var(--text-muted)",
+                    color: step >= 2 ? "var(--accent-amethyst)" : "var(--text-muted)",
                     fontWeight: step === 2 ? 700 : 400
                   }}
                 >
@@ -139,6 +139,8 @@ export default function CheckoutModal() {
                         type="text"
                         name="firstName"
                         required
+                        autoComplete="given-name"
+                        placeholder="Jane"
                         value={formData.firstName}
                         onChange={handleChange}
                         className="promo-input"
@@ -153,6 +155,8 @@ export default function CheckoutModal() {
                         type="text"
                         name="lastName"
                         required
+                        autoComplete="family-name"
+                        placeholder="Doe"
                         value={formData.lastName}
                         onChange={handleChange}
                         className="promo-input"
@@ -169,6 +173,8 @@ export default function CheckoutModal() {
                       type="email"
                       name="email"
                       required
+                      autoComplete="email"
+                      placeholder="you@example.com"
                       value={formData.email}
                       onChange={handleChange}
                       className="promo-input"
@@ -184,6 +190,8 @@ export default function CheckoutModal() {
                       type="text"
                       name="address"
                       required
+                      autoComplete="street-address"
+                      placeholder="12 Rosewood Lane, Apt 4"
                       value={formData.address}
                       onChange={handleChange}
                       className="promo-input"
@@ -200,6 +208,8 @@ export default function CheckoutModal() {
                         type="text"
                         name="city"
                         required
+                        autoComplete="address-level2"
+                        placeholder="London"
                         value={formData.city}
                         onChange={handleChange}
                         className="promo-input"
@@ -214,6 +224,9 @@ export default function CheckoutModal() {
                         type="text"
                         name="state"
                         required
+                        autoComplete="address-level1"
+                        maxLength={12}
+                        placeholder="NY"
                         value={formData.state}
                         onChange={handleChange}
                         className="promo-input"
@@ -228,6 +241,10 @@ export default function CheckoutModal() {
                         type="text"
                         name="zip"
                         required
+                        autoComplete="postal-code"
+                        inputMode="numeric"
+                        maxLength={10}
+                        placeholder="10021"
                         value={formData.zip}
                         onChange={handleChange}
                         className="promo-input"
@@ -249,7 +266,7 @@ export default function CheckoutModal() {
                       gap: "0.8rem"
                     }}
                   >
-                    <Package size={20} style={{ color: "var(--accent-champagne)" }} />
+                    <Package size={20} style={{ color: "var(--accent-amethyst)" }} />
                     <div style={{ fontSize: "0.8rem" }}>
                       <strong>Complimentary Unbranded Discreet Packaging</strong>
                       <p style={{ color: "var(--text-muted)", fontSize: "0.75rem" }}>
@@ -275,7 +292,7 @@ export default function CheckoutModal() {
                   <div
                     style={{
                       padding: "1rem 1.4rem",
-                      background: "rgba(228, 213, 195, 0.08)",
+                      background: "rgba(156, 137, 184, 0.14)",
                       borderRadius: "var(--radius-sm)",
                       border: "1px solid var(--border-active)",
                       display: "flex",
@@ -284,7 +301,7 @@ export default function CheckoutModal() {
                     }}
                   >
                     <div>
-                      <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--accent-rose)" }}>
+                      <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--accent-blush)" }}>
                         Total Authorized Amount:
                       </span>
                       <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "var(--text-primary)" }}>
@@ -293,7 +310,7 @@ export default function CheckoutModal() {
                     </div>
                     <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)", textAlign: "right" }}>
                       <div>Delivering to: {formData.city}, {formData.state}</div>
-                      <div style={{ color: "var(--accent-champagne)" }}>Express Shipping (2-3 Business Days)</div>
+                      <div style={{ color: "var(--accent-amethyst)" }}>Express Shipping (2-3 Business Days)</div>
                     </div>
                   </div>
 
@@ -311,9 +328,9 @@ export default function CheckoutModal() {
                           style={{
                             padding: "0.8rem",
                             borderRadius: "var(--radius-sm)",
-                            background: formData.paymentMethod === m ? "rgba(228, 213, 195, 0.15)" : "var(--bg-surface-elevated)",
-                            border: `1px solid ${formData.paymentMethod === m ? "var(--accent-champagne)" : "var(--border-subtle)"}`,
-                            color: formData.paymentMethod === m ? "var(--accent-champagne)" : "var(--text-primary)",
+                            background: formData.paymentMethod === m ? "rgba(156, 137, 184, 0.22)" : "var(--bg-surface-elevated)",
+                            border: `1px solid ${formData.paymentMethod === m ? "var(--accent-amethyst)" : "var(--border-subtle)"}`,
+                            color: formData.paymentMethod === m ? "var(--accent-amethyst)" : "var(--text-primary)",
                             fontWeight: 600,
                             fontSize: "0.8rem",
                             cursor: "pointer",
@@ -335,6 +352,12 @@ export default function CheckoutModal() {
                         <input
                           type="text"
                           name="cardNumber"
+                          required
+                          autoComplete="cc-number"
+                          inputMode="numeric"
+                          maxLength={19}
+                          pattern="[0-9 ]{12,19}"
+                          placeholder="4242 4242 4242 4242"
                           value={formData.cardNumber}
                           onChange={handleChange}
                           className="promo-input"
@@ -350,6 +373,12 @@ export default function CheckoutModal() {
                           <input
                             type="text"
                             name="cardExp"
+                            required
+                            autoComplete="cc-exp"
+                            inputMode="numeric"
+                            maxLength={5}
+                            pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+                            placeholder="MM/YY"
                             value={formData.cardExp}
                             onChange={handleChange}
                             className="promo-input"
@@ -363,6 +392,12 @@ export default function CheckoutModal() {
                           <input
                             type="text"
                             name="cardCvc"
+                            required
+                            autoComplete="cc-csc"
+                            inputMode="numeric"
+                            maxLength={4}
+                            pattern="[0-9]{3,4}"
+                            placeholder="123"
                             value={formData.cardCvc}
                             onChange={handleChange}
                             className="promo-input"
@@ -403,9 +438,9 @@ export default function CheckoutModal() {
                 width: "70px",
                 height: "70px",
                 borderRadius: "50%",
-                background: "rgba(78, 186, 111, 0.15)",
-                border: "1px solid #4EBA6F",
-                color: "#4EBA6F",
+                background: "var(--state-success-bg)",
+                border: "1px solid var(--state-success)",
+                color: "var(--state-success)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -415,7 +450,7 @@ export default function CheckoutModal() {
               <CheckCircle2 size={36} />
             </div>
 
-            <span className="section-eyebrow" style={{ color: "#4EBA6F" }}>
+            <span className="section-eyebrow" style={{ color: "var(--state-success)" }}>
               Order Confirmed • Thank You
             </span>
             <h2 style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>
@@ -440,7 +475,7 @@ export default function CheckoutModal() {
             >
               <div className="flex-between" style={{ marginBottom: "0.6rem" }}>
                 <span style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>Order Reference</span>
-                <strong style={{ color: "var(--accent-champagne)", fontFamily: "monospace" }}>{orderNumber}</strong>
+                <strong style={{ color: "var(--accent-amethyst)", fontFamily: "monospace" }}>{orderNumber}</strong>
               </div>
               <div className="flex-between" style={{ marginBottom: "0.6rem" }}>
                 <span style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>Estimated Arrival</span>

@@ -123,8 +123,8 @@ export default function Navbar() {
                     autoFocus
                     style={{
                       padding: "0.5rem 2rem 0.5rem 0.9rem",
-                      background: "rgba(255, 255, 255, 0.08)",
-                      border: "1px solid var(--accent-champagne)",
+                      background: "rgba(42, 34, 51, 0.06)",
+                      border: "1px solid var(--accent-amethyst)",
                       borderRadius: "var(--radius-full)",
                       color: "var(--text-primary)",
                       fontSize: "0.8rem",

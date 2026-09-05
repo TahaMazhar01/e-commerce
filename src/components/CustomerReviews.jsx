@@ -44,7 +44,7 @@ export default function CustomerReviews() {
                 style={{
                   marginTop: "auto",
                   paddingTop: "0.8rem",
-                  borderTop: "1px solid rgba(255,255,255,0.06)",
+                  borderTop: "1px solid rgba(42, 34, 51, 0.07)",
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
@@ -53,10 +53,10 @@ export default function CustomerReviews() {
               >
                 <div>
                   <strong style={{ color: "var(--text-primary)", display: "block" }}>{rev.author}</strong>
-                  <span style={{ color: "var(--accent-champagne)" }}>{rev.product}</span>
+                  <span style={{ color: "var(--accent-amethyst)" }}>{rev.product}</span>
                 </div>
                 {rev.verified && (
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "#4EBA6F" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "var(--state-success)" }}>
                     <CheckCircle2 size={13} />
                     <span>Verified Buyer</span>
                   </div>

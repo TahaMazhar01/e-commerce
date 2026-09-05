@@ -37,7 +37,7 @@ export default function Footer() {
               Architectural next-to-skin luxury. Handcrafted from 22-momme pure mulberry silk,
               breathable micro-modal, and seamless sculpting fabrics for men and women.
             </p>
-            <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", gap: "0.6rem", color: "var(--accent-champagne)", fontSize: "0.8rem" }}>
+            <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", gap: "0.6rem", color: "var(--accent-amethyst)", fontSize: "0.8rem" }}>
               <ShieldCheck size={16} />
               <span>OEKO-TEX® Standard 100 Certified Non-Toxic</span>
             </div>
@@ -75,7 +75,7 @@ export default function Footer() {
             </p>
 
             {subscribed ? (
-              <div style={{ padding: "0.8rem", background: "rgba(228, 213, 195, 0.1)", borderRadius: "var(--radius-sm)", color: "var(--accent-champagne)", fontSize: "0.8rem" }}>
+              <div style={{ padding: "0.8rem", background: "rgba(156, 137, 184, 0.16)", borderRadius: "var(--radius-sm)", color: "var(--accent-amethyst)", fontSize: "0.8rem" }}>
                 ✨ Welcome to the Private Client Circle. Your 15% code <strong>LUXE15</strong> is active.
               </div>
             ) : (

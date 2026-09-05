@@ -17,6 +17,15 @@ export default function SizeGuideModal() {
   const [menWaist, setMenWaist] = useState(32);
   const [fitPreference, setFitPreference] = useState("support"); // 'support' or 'relaxed'
 
+  // The modal lives in the root layout and never unmounts, so activeTab cannot be
+  // seeded from useState alone - it would freeze on whatever gender was set at first
+  // mount. Re-sync every time the guide is opened. Unisex pieces fall back to women's.
+  React.useEffect(() => {
+    if (isSizeGuideOpen) {
+      setActiveTab(sizeGuideGender === "men" ? "men" : "women");
+    }
+  }, [isSizeGuideOpen, sizeGuideGender]);
+
   if (!isSizeGuideOpen) return null;
 
   // Women's size recommendation logic
@@ -70,7 +79,7 @@ export default function SizeGuideModal() {
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-champagne)", marginBottom: "0.5rem" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-amethyst)", marginBottom: "0.5rem" }}>
             <Ruler size={18} />
             <span style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
               Intelligent Fit Assistant
@@ -116,7 +125,7 @@ export default function SizeGuideModal() {
               }}
             >
               <h3 style={{ fontSize: "1.2rem", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <Sparkles size={16} style={{ color: "var(--accent-champagne)" }} />
+                <Sparkles size={16} style={{ color: "var(--accent-amethyst)" }} />
                 Interactive Bralette & Bodysuit Calculator
               </h3>
 
@@ -132,7 +141,7 @@ export default function SizeGuideModal() {
                     step="2"
                     value={bandMeasurement}
                     onChange={(e) => setBandMeasurement(e.target.value)}
-                    style={{ width: "100%", accentColor: "var(--accent-champagne)" }}
+                    style={{ width: "100%", accentColor: "var(--accent-amethyst)" }}
                   />
                   <div className="flex-between" style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>
                     <span>30&quot;</span>
@@ -155,8 +164,8 @@ export default function SizeGuideModal() {
                           flex: 1,
                           padding: "0.5rem",
                           borderRadius: "var(--radius-sm)",
-                          background: cupMeasurement === cup ? "var(--accent-champagne)" : "var(--bg-surface)",
-                          color: cupMeasurement === cup ? "#0A0A0D" : "var(--text-primary)",
+                          background: cupMeasurement === cup ? "var(--accent-amethyst)" : "var(--bg-surface)",
+                          color: cupMeasurement === cup ? "var(--text-inverse)" : "var(--text-primary)",
                           fontWeight: cupMeasurement === cup ? 700 : 400,
                           border: "1px solid var(--border-subtle)",
                           cursor: "pointer"
@@ -174,7 +183,7 @@ export default function SizeGuideModal() {
                 style={{
                   marginTop: "1.5rem",
                   padding: "1rem 1.4rem",
-                  background: "rgba(228, 213, 195, 0.08)",
+                  background: "rgba(156, 137, 184, 0.14)",
                   border: "1px solid var(--border-active)",
                   borderRadius: "var(--radius-sm)",
                   display: "flex",
@@ -183,14 +192,14 @@ export default function SizeGuideModal() {
                 }}
               >
                 <div>
-                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent-rose)" }}>
+                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent-blush)" }}>
                     Your Recommended Aura Size:
                   </span>
                   <div style={{ fontSize: "1.4rem", fontFamily: "var(--font-serif)", color: "var(--text-primary)" }}>
                     Size <strong>{getWomenRecommendation()}</strong> (for {bandMeasurement}{cupMeasurement})
                   </div>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: "#4EBA6F", fontSize: "0.85rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: "var(--state-success)", fontSize: "0.85rem" }}>
                   <CheckCircle2 size={16} />
                   <span>Verified 98% Fit Accuracy</span>
                 </div>
@@ -200,7 +209,7 @@ export default function SizeGuideModal() {
             {/* Reference Table */}
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem", textAlign: "left" }}>
               <thead>
-                <tr style={{ borderBottom: "1px solid var(--border-subtle)", color: "var(--accent-champagne)" }}>
+                <tr style={{ borderBottom: "1px solid var(--border-subtle)", color: "var(--accent-amethyst)" }}>
                   <th style={{ padding: "0.8rem" }}>AURA Size</th>
                   <th style={{ padding: "0.8rem" }}>US / CA</th>
                   <th style={{ padding: "0.8rem" }}>Bust (in)</th>
@@ -209,28 +218,28 @@ export default function SizeGuideModal() {
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>XS</td>
                   <td style={{ padding: "0.8rem" }}>0 - 2</td>
                   <td style={{ padding: "0.8rem" }}>31 - 33</td>
                   <td style={{ padding: "0.8rem" }}>24 - 26</td>
                   <td style={{ padding: "0.8rem" }}>34 - 36</td>
                 </tr>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>S</td>
                   <td style={{ padding: "0.8rem" }}>4 - 6</td>
                   <td style={{ padding: "0.8rem" }}>33 - 35</td>
                   <td style={{ padding: "0.8rem" }}>26 - 28</td>
                   <td style={{ padding: "0.8rem" }}>36 - 38</td>
                 </tr>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>M</td>
                   <td style={{ padding: "0.8rem" }}>8 - 10</td>
                   <td style={{ padding: "0.8rem" }}>35 - 37</td>
                   <td style={{ padding: "0.8rem" }}>28 - 30</td>
                   <td style={{ padding: "0.8rem" }}>38 - 40</td>
                 </tr>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>L</td>
                   <td style={{ padding: "0.8rem" }}>12 - 14</td>
                   <td style={{ padding: "0.8rem" }}>37 - 40</td>
@@ -262,7 +271,7 @@ export default function SizeGuideModal() {
               }}
             >
               <h3 style={{ fontSize: "1.2rem", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <Sparkles size={16} style={{ color: "var(--accent-champagne)" }} />
+                <Sparkles size={16} style={{ color: "var(--accent-amethyst)" }} />
                 Interactive Boxer Brief & Trunk Calculator
               </h3>
 
@@ -278,7 +287,7 @@ export default function SizeGuideModal() {
                     step="1"
                     value={menWaist}
                     onChange={(e) => setMenWaist(e.target.value)}
-                    style={{ width: "100%", accentColor: "var(--accent-champagne)" }}
+                    style={{ width: "100%", accentColor: "var(--accent-amethyst)" }}
                   />
                   <div className="flex-between" style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>
                     <span>28&quot; (S)</span>
@@ -299,8 +308,8 @@ export default function SizeGuideModal() {
                         flex: 1,
                         padding: "0.6rem",
                         borderRadius: "var(--radius-sm)",
-                        background: fitPreference === "support" ? "var(--accent-champagne)" : "var(--bg-surface)",
-                        color: fitPreference === "support" ? "#0A0A0D" : "var(--text-primary)",
+                        background: fitPreference === "support" ? "var(--accent-amethyst)" : "var(--bg-surface)",
+                        color: fitPreference === "support" ? "var(--text-inverse)" : "var(--text-primary)",
                         fontWeight: fitPreference === "support" ? 600 : 400,
                         border: "1px solid var(--border-subtle)",
                         cursor: "pointer",
@@ -315,8 +324,8 @@ export default function SizeGuideModal() {
                         flex: 1,
                         padding: "0.6rem",
                         borderRadius: "var(--radius-sm)",
-                        background: fitPreference === "relaxed" ? "var(--accent-champagne)" : "var(--bg-surface)",
-                        color: fitPreference === "relaxed" ? "#0A0A0D" : "var(--text-primary)",
+                        background: fitPreference === "relaxed" ? "var(--accent-amethyst)" : "var(--bg-surface)",
+                        color: fitPreference === "relaxed" ? "var(--text-inverse)" : "var(--text-primary)",
                         fontWeight: fitPreference === "relaxed" ? 600 : 400,
                         border: "1px solid var(--border-subtle)",
                         cursor: "pointer",
@@ -334,7 +343,7 @@ export default function SizeGuideModal() {
                 style={{
                   marginTop: "1.5rem",
                   padding: "1rem 1.4rem",
-                  background: "rgba(228, 213, 195, 0.08)",
+                  background: "rgba(156, 137, 184, 0.14)",
                   border: "1px solid var(--border-active)",
                   borderRadius: "var(--radius-sm)",
                   display: "flex",
@@ -343,14 +352,14 @@ export default function SizeGuideModal() {
                 }}
               >
                 <div>
-                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent-rose)" }}>
+                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent-blush)" }}>
                     Your Tailored Recommendation:
                   </span>
                   <div style={{ fontSize: "1.4rem", fontFamily: "var(--font-serif)", color: "var(--text-primary)" }}>
                     {getMenRecommendation()}
                   </div>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: "#4EBA6F", fontSize: "0.85rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: "var(--state-success)", fontSize: "0.85rem" }}>
                   <CheckCircle2 size={16} />
                   <span>Zero-Roll Band Certified</span>
                 </div>
@@ -360,7 +369,7 @@ export default function SizeGuideModal() {
             {/* Reference Table */}
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem", textAlign: "left" }}>
               <thead>
-                <tr style={{ borderBottom: "1px solid var(--border-subtle)", color: "var(--accent-champagne)" }}>
+                <tr style={{ borderBottom: "1px solid var(--border-subtle)", color: "var(--accent-amethyst)" }}>
                   <th style={{ padding: "0.8rem" }}>AURA Size</th>
                   <th style={{ padding: "0.8rem" }}>Waist (Inches)</th>
                   <th style={{ padding: "0.8rem" }}>Waist (cm)</th>
@@ -368,25 +377,25 @@ export default function SizeGuideModal() {
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>S</td>
                   <td style={{ padding: "0.8rem" }}>28 - 30&quot;</td>
                   <td style={{ padding: "0.8rem" }}>71 - 76 cm</td>
                   <td style={{ padding: "0.8rem" }}>28 - 30</td>
                 </tr>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>M</td>
                   <td style={{ padding: "0.8rem" }}>31 - 33&quot;</td>
                   <td style={{ padding: "0.8rem" }}>78 - 84 cm</td>
                   <td style={{ padding: "0.8rem" }}>31 - 33</td>
                 </tr>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>L</td>
                   <td style={{ padding: "0.8rem" }}>34 - 36&quot;</td>
                   <td style={{ padding: "0.8rem" }}>86 - 91 cm</td>
                   <td style={{ padding: "0.8rem" }}>34 - 36</td>
                 </tr>
-                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                <tr style={{ borderBottom: "1px solid rgba(42, 34, 51, 0.06)" }}>
                   <td style={{ padding: "0.8rem", fontWeight: 600 }}>XL</td>
                   <td style={{ padding: "0.8rem" }}>37 - 39&quot;</td>
                   <td style={{ padding: "0.8rem" }}>94 - 99 cm</td>

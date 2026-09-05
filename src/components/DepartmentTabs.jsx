@@ -46,7 +46,7 @@ export default function DepartmentTabs() {
           </span>
 
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <SlidersHorizontal size={14} style={{ color: "var(--accent-champagne)" }} />
+            <SlidersHorizontal size={14} style={{ color: "var(--accent-amethyst)" }} />
             <select
               className="custom-select"
               value={sortBy}

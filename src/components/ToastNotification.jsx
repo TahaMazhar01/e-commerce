@@ -16,9 +16,9 @@ export default function ToastNotification() {
         bottom: "2rem",
         right: "2rem",
         zIndex: 300,
-        background: "rgba(18, 18, 23, 0.95)",
-        border: "1px solid var(--accent-champagne)",
-        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6)",
+        background: "rgba(255, 255, 255, 0.96)",
+        border: "1px solid var(--accent-amethyst)",
+        boxShadow: "0 10px 30px rgba(74, 59, 99, 0.18)",
         padding: "0.85rem 1.4rem",
         borderRadius: "var(--radius-sm)",
         color: "var(--text-primary)",
@@ -30,7 +30,7 @@ export default function ToastNotification() {
         backdropFilter: "blur(12px)"
       }}
     >
-      <CheckCircle2 size={16} style={{ color: "var(--accent-champagne)" }} />
+      <CheckCircle2 size={16} style={{ color: "var(--accent-amethyst)" }} />
       <span>{toast}</span>
     </div>
   );

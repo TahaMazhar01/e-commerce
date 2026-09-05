@@ -34,14 +34,26 @@ export default function ProductCard({ product }) {
           )}
         </div>
 
-        {/* Wishlist Button */}
-        <button
-          className={`wishlist-heart-btn ${isFavorited ? "active" : ""}`}
-          onClick={() => toggleWishlist(product)}
-          aria-label={isFavorited ? "Remove from Wishlist" : "Save to Wishlist"}
-        >
-          <Heart size={16} fill={isFavorited ? "currentColor" : "none"} />
-        </button>
+        {/* Always-visible card actions. These sit outside the hover overlay so
+            touch devices and keyboard users can still reach quick view. */}
+        <div className="card-actions">
+          <button
+            className="card-action-btn"
+            onClick={() => setQuickviewProduct(product)}
+            aria-label={`Quick view ${product.name}`}
+            title="Quick view & 3D fabric"
+          >
+            <Eye size={16} />
+          </button>
+          <button
+            className={`card-action-btn wishlist-heart-btn ${isFavorited ? "active" : ""}`}
+            onClick={() => toggleWishlist(product)}
+            aria-label={isFavorited ? `Remove ${product.name} from wishlist` : `Save ${product.name} to wishlist`}
+            aria-pressed={isFavorited}
+          >
+            <Heart size={16} fill={isFavorited ? "currentColor" : "none"} />
+          </button>
+        </div>
 
         {/* Product Image (updates with color swatch) */}
         <img
@@ -49,6 +61,12 @@ export default function ProductCard({ product }) {
           alt={`${product.name} in ${selectedColor.name}`}
           className="product-image"
           loading="lazy"
+          onError={(e) => {
+            if (e.currentTarget.dataset.fallback) return;
+            e.currentTarget.dataset.fallback = "1";
+            e.currentTarget.classList.add("product-image-missing");
+            e.currentTarget.removeAttribute("src");
+          }}
         />
 
         {/* Quick-Action Hover Overlay */}
@@ -88,7 +106,7 @@ export default function ProductCard({ product }) {
           <span className="product-category">
             {product.gender === "women" ? "Women" : product.gender === "men" ? "Men" : "Unisex"} • {product.category}
           </span>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.75rem", color: "var(--accent-champagne)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.75rem", color: "var(--accent-amethyst)" }}>
             <Star size={12} fill="currentColor" />
             <span>{product.rating}</span>
             <span style={{ color: "var(--text-muted)", fontSize: "0.7rem" }}>
@@ -97,11 +115,14 @@ export default function ProductCard({ product }) {
           </div>
         </div>
 
-        <h3
-          className="product-title"
-          onClick={() => setQuickviewProduct(product)}
-        >
-          {product.name}
+        <h3 className="product-title">
+          <button
+            type="button"
+            className="product-title-btn"
+            onClick={() => setQuickviewProduct(product)}
+          >
+            {product.name}
+          </button>
         </h3>
 
         <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", lineHeight: 1.4 }}>

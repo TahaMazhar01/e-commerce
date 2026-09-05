@@ -11,27 +11,49 @@ export default function HeroBanner() {
   const heroContentRef = useRef(null);
 
   useEffect(() => {
-    // GSAP Stagger Entrance Animation
-    if (heroContentRef.current) {
-      const elements = heroContentRef.current.querySelectorAll(".gsap-reveal");
-      gsap.fromTo(
-        elements,
-        {
-          opacity: 0,
-          y: 35,
-          scale: 0.98
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.1,
-          stagger: 0.18,
-          ease: "power3.out",
-          delay: 0.2
-        }
-      );
-    }
+    const container = heroContentRef.current;
+    if (!container) return;
+
+    const elements = container.querySelectorAll(".gsap-reveal");
+    const reveal = () => gsap.set(elements, { clearProps: "all" });
+
+    // The headline and both CTAs are the most important content on the page, so
+    // they must never depend on a tween finishing. Skip the animation entirely
+    // for reduced-motion users, and keep a timer that reveals them outright if
+    // the rAF loop stalls (background tab, throttled frame, GSAP failing to run).
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const tween = gsap.fromTo(
+      elements,
+      {
+        opacity: 0,
+        y: 35,
+        scale: 0.98
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.1,
+        stagger: 0.18,
+        ease: "power3.out",
+        delay: 0.2,
+        onComplete: reveal
+      }
+    );
+
+    const failsafe = setTimeout(() => {
+      if (tween.progress() < 1) {
+        tween.kill();
+        reveal();
+      }
+    }, 2600);
+
+    return () => {
+      clearTimeout(failsafe);
+      tween.kill();
+      reveal();
+    };
   }, []);
 
   const handleCtaClick = (dept) => {

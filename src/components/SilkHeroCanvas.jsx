@@ -28,7 +28,7 @@ export default function SilkHeroCanvas() {
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.0;
     container.appendChild(renderer.domElement);
 
     // 3D Procedural Silk Cloth Geometry
@@ -44,10 +44,10 @@ export default function SilkHeroCanvas() {
 
     // Luxurious Satin / Silk Material
     const material = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color("#1B1A24"),
-      emissive: new THREE.Color("#0C0B12"),
-      roughness: 0.22,
-      metalness: 0.45,
+      color: new THREE.Color("#b39dd0"),
+      emissive: new THREE.Color("#3a2d52"),
+      roughness: 0.26,
+      metalness: 0.32,
       clearcoat: 0.8,
       clearcoatRoughness: 0.2,
       reflectivity: 0.9,
@@ -79,27 +79,27 @@ export default function SilkHeroCanvas() {
     );
 
     const particleMat = new THREE.PointsMaterial({
-      color: 0xE6D5C3,
-      size: 0.045,
+      color: 0x8f79b3,
+      size: 0.05,
       transparent: true,
-      opacity: 0.6,
-      blending: THREE.AdditiveBlending
+      opacity: 0.55,
+      blending: THREE.NormalBlending
     });
 
     const particles = new THREE.Points(particleGeo, particleMat);
     scene.add(particles);
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0x282635, 1.8);
+    const ambientLight = new THREE.AmbientLight(0xd6cce6, 2.4);
     scene.add(ambientLight);
 
     // Key Champagne Light
-    const keyLight = new THREE.DirectionalLight(0xE6D5C3, 2.8);
+    const keyLight = new THREE.DirectionalLight(0xf0a6ca, 2.6);
     keyLight.position.set(5, 6, 8);
     scene.add(keyLight);
 
     // Rose Gold Rim Light
-    const rimLight = new THREE.DirectionalLight(0xC59B88, 2.2);
+    const rimLight = new THREE.DirectionalLight(0xb8bedd, 2.0);
     rimLight.position.set(-6, -4, 4);
     scene.add(rimLight);
 

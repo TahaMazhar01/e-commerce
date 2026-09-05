@@ -19,9 +19,9 @@ export const PRODUCTS = [
     careInstructions: "Delicate hand wash cold or eco dry clean. Line dry in shade.",
     sizes: ["XS", "S", "M", "L", "XL"],
     colors: [
-      { name: "Champagne Gold", hex: "#E6D5C3", image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Obsidian Noir", hex: "#16161D", image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Blush Cashmere", hex: "#C59B88", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Champagne Gold", hex: "#E6D5C3", image: "https://images.unsplash.com/photo-1587631550085-2d4bed859ea9?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Obsidian Noir", hex: "#16161D", image: "https://images.unsplash.com/photo-1584061554353-f8c337f5dbb9?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Blush Cashmere", hex: "#f0a6ca", image: "https://images.unsplash.com/photo-1594631773033-814817f000e8?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "silk",
     isFeatured: true
@@ -43,9 +43,9 @@ export const PRODUCTS = [
     careInstructions: "Machine wash cold on gentle cycle in laundry bag. Do not tumble dry.",
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     colors: [
-      { name: "Mocha Nude", hex: "#7E5845", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Espresso Noir", hex: "#221C19", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Sienna Sand", hex: "#C49A78", image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Mocha Nude", hex: "#7E5845", image: "https://images.unsplash.com/photo-1613087088715-4b613e9b4d68?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Espresso Noir", hex: "#221C19", image: "https://images.unsplash.com/photo-1747257574419-290e1e535d92?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Sienna Sand", hex: "#C49A78", image: "https://images.unsplash.com/photo-1620763050148-af058ab2fff0?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "sculpt",
     isFeatured: true
@@ -67,8 +67,8 @@ export const PRODUCTS = [
     careInstructions: "Machine wash warm, tumble dry delicate.",
     sizes: ["XS", "S", "M", "L", "XL"],
     colors: [
-      { name: "Trio Palette (Pearl / Sand / Noir)", hex: "#D6C7B2", image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Obsidian Multi", hex: "#16161D", image: "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Trio Palette (Mist / Orchid / Blush)", hex: "#efc3e6", image: "https://images.unsplash.com/photo-1524404794194-16bae22718c0?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Obsidian Multi", hex: "#16161D", image: "https://images.unsplash.com/photo-1584061677142-c729839e341f?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "modal",
     isFeatured: false
@@ -90,8 +90,8 @@ export const PRODUCTS = [
     careInstructions: "Specialty silk wash or dry clean.",
     sizes: ["XS", "S", "M", "L"],
     colors: [
-      { name: "Emerald Noir", hex: "#172A23", image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Champagne Sheen", hex: "#E6D5C3", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Amethyst Dusk", hex: "#9c89b8", image: "https://images.unsplash.com/photo-1634655511368-6cd7213719f4?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Champagne Sheen", hex: "#E6D5C3", image: "https://images.unsplash.com/photo-1618437542145-38e9015cf8f1?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "silk",
     isFeatured: true
@@ -113,8 +113,8 @@ export const PRODUCTS = [
     careInstructions: "Machine wash cold inside-out, tumble dry low.",
     sizes: ["XS", "S", "M", "L", "XL"],
     colors: [
-      { name: "Warm Taupe", hex: "#A89B91", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Slate Heather", hex: "#5C6068", image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Orchid Blush", hex: "#efc3e6", image: "https://images.unsplash.com/photo-1617055407123-3d7130c1f940?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Periwinkle Heather", hex: "#b8bedd", image: "https://images.unsplash.com/photo-1619125590596-ea086496993e?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "modal",
     isFeatured: false
@@ -138,9 +138,9 @@ export const PRODUCTS = [
     careInstructions: "Machine wash warm, do not bleach, tumble dry low.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      { name: "Charcoal Heather", hex: "#2C2D35", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Obsidian Deep", hex: "#111116", image: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Midnight Navy", hex: "#1A2436", image: "https://images.unsplash.com/photo-1622445268462-337f1688724d?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Charcoal Heather", hex: "#2C2D35", image: "https://images.unsplash.com/photo-1640765937555-6f413ed1d936?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Obsidian Deep", hex: "#111116", image: "https://images.unsplash.com/photo-1618022325802-7e5e732d97a1?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Midnight Navy", hex: "#1A2436", image: "https://images.unsplash.com/photo-1601393709771-3938c63d41a6?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "modal",
     isFeatured: true
@@ -162,8 +162,8 @@ export const PRODUCTS = [
     careInstructions: "Machine wash cold, air dry or tumble dry low.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      { name: "Carbon Black", hex: "#1B1B1E", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Steel Glacier", hex: "#4A5568", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Carbon Black", hex: "#1B1B1E", image: "https://images.unsplash.com/photo-1601393710008-984348f7447b?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Steel Glacier", hex: "#4A5568", image: "https://images.unsplash.com/photo-1695131022320-c42cd294863f?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "sculpt",
     isFeatured: true
@@ -185,7 +185,7 @@ export const PRODUCTS = [
     careInstructions: "Machine wash warm, tumble dry medium.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      { name: "Essential Trio (Raven / White / Heather)", hex: "#222228", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Essential Trio (Raven / Mist / Heather)", hex: "#222228", image: "https://images.unsplash.com/photo-1640747669771-b82a6e40f534?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "modal",
     isFeatured: false
@@ -207,8 +207,8 @@ export const PRODUCTS = [
     careInstructions: "Dry clean or delicate hand wash cold.",
     sizes: ["S/M", "L/XL"],
     colors: [
-      { name: "Obsidian / Silk Gold", hex: "#0E0E12", image: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Midnight Sapphire", hex: "#161F33", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Obsidian / Silk Gold", hex: "#0E0E12", image: "https://images.unsplash.com/photo-1761724794887-b4713bab592b?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Midnight Sapphire", hex: "#161F33", image: "https://images.unsplash.com/photo-1706192049174-e5a72dd5c8b6?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "silk",
     isFeatured: true
@@ -230,8 +230,8 @@ export const PRODUCTS = [
     careInstructions: "Machine wash cold, tumble dry low.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      { name: "Graphite Melange", hex: "#3A3C44", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Deep Earth Taupe", hex: "#544B45", image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Graphite Melange", hex: "#3A3C44", image: "https://images.unsplash.com/photo-1523212727988-82c430c79c8e?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Pearl Mist", hex: "#f0e6ef", image: "https://images.unsplash.com/photo-1732869415090-179de017b6d6?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "modal",
     isFeatured: false
@@ -253,8 +253,8 @@ export const PRODUCTS = [
     careInstructions: "Hand wash cold with gentle detergent. Air dry.",
     sizes: ["One Size"],
     colors: [
-      { name: "Champagne Silk", hex: "#E6D5C3", image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1000&q=80" },
-      { name: "Onyx Black", hex: "#141418", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80" }
+      { name: "Champagne Silk", hex: "#E6D5C3", image: "https://images.unsplash.com/photo-1758221056094-dd3012f1f5f9?auto=format&fit=crop&w=1000&q=80" },
+      { name: "Amethyst Silk", hex: "#9c89b8", image: "https://images.unsplash.com/photo-1764437835882-19c6e06776bc?auto=format&fit=crop&w=1000&q=80" }
     ],
     fabricType: "silk",
     isFeatured: true

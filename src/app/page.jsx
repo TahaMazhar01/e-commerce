@@ -38,7 +38,7 @@ export default function StorefrontPage() {
           {/* Catalog Grid */}
           {filteredProducts.length === 0 ? (
             <div style={{ textAlign: "center", padding: "5rem 1rem", background: "var(--bg-surface)", borderRadius: "var(--radius-md)" }}>
-              <ShoppingBag size={32} style={{ color: "var(--accent-rose)", margin: "0 auto 1rem", opacity: 0.7 }} />
+              <ShoppingBag size={32} style={{ color: "var(--accent-blush)", margin: "0 auto 1rem", opacity: 0.7 }} />
               <h3 style={{ fontSize: "1.3rem", marginBottom: "0.5rem" }}>
                 No intimates match your criteria
               </h3>

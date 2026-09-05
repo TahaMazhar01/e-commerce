@@ -87,7 +87,7 @@ export default function ProductQuickviewModal() {
                 style={{
                   padding: "0.45rem 0.9rem",
                   fontSize: "0.75rem",
-                  borderColor: !show3DInspector ? "var(--accent-champagne)" : "var(--border-subtle)"
+                  borderColor: !show3DInspector ? "var(--accent-amethyst)" : "var(--border-subtle)"
                 }}
                 onClick={() => setShow3DInspector(false)}
               >
@@ -99,7 +99,7 @@ export default function ProductQuickviewModal() {
                 style={{
                   padding: "0.45rem 0.9rem",
                   fontSize: "0.75rem",
-                  borderColor: show3DInspector ? "var(--accent-champagne)" : "var(--border-subtle)"
+                  borderColor: show3DInspector ? "var(--accent-amethyst)" : "var(--border-subtle)"
                 }}
                 onClick={() => setShow3DInspector(true)}
               >
@@ -146,8 +146,8 @@ export default function ProductQuickviewModal() {
                     gap: "0.4rem",
                     padding: "0.4rem 0.7rem",
                     borderRadius: "var(--radius-sm)",
-                    background: selectedColor?.name === col.name ? "rgba(228, 213, 195, 0.15)" : "var(--bg-surface-elevated)",
-                    border: `1px solid ${selectedColor?.name === col.name ? "var(--accent-champagne)" : "var(--border-subtle)"}`,
+                    background: selectedColor?.name === col.name ? "rgba(156, 137, 184, 0.22)" : "var(--bg-surface-elevated)",
+                    border: `1px solid ${selectedColor?.name === col.name ? "var(--accent-amethyst)" : "var(--border-subtle)"}`,
                     color: "var(--text-primary)",
                     fontSize: "0.75rem",
                     cursor: "pointer"
@@ -159,7 +159,7 @@ export default function ProductQuickviewModal() {
                       height: "12px",
                       borderRadius: "50%",
                       backgroundColor: col.hex,
-                      border: "1px solid rgba(255,255,255,0.3)"
+                      border: "1px solid rgba(42, 34, 51, 0.25)"
                     }}
                   />
                   <span>{col.name}</span>
@@ -178,7 +178,7 @@ export default function ProductQuickviewModal() {
                 {quickviewProduct.name}
               </h2>
               <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                <div style={{ display: "flex", color: "#E6D5C3" }}>
+                <div style={{ display: "flex", color: "var(--accent-blush-deep)" }}>
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
@@ -225,7 +225,7 @@ export default function ProductQuickviewModal() {
               </div>
               <div>
                 <span style={{ color: "var(--text-muted)", display: "block" }}>Breathability</span>
-                <strong style={{ color: "var(--accent-champagne)" }}>{quickviewProduct.breathability}</strong>
+                <strong style={{ color: "var(--accent-amethyst)" }}>{quickviewProduct.breathability}</strong>
               </div>
             </div>
 
@@ -233,7 +233,7 @@ export default function ProductQuickviewModal() {
             <div>
               <div className="flex-between" style={{ marginBottom: "0.6rem" }}>
                 <span style={{ fontSize: "0.85rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                  Select Size: <strong style={{ color: "var(--accent-champagne)" }}>{selectedSize}</strong>
+                  Select Size: <strong style={{ color: "var(--accent-amethyst)" }}>{selectedSize}</strong>
                 </span>
                 <button
                   onClick={openSizeGuide}
@@ -242,7 +242,7 @@ export default function ProductQuickviewModal() {
                     alignItems: "center",
                     gap: "0.3rem",
                     fontSize: "0.8rem",
-                    color: "var(--accent-rose)",
+                    color: "var(--accent-blush)",
                     textDecoration: "underline",
                     cursor: "pointer"
                   }}
@@ -261,10 +261,10 @@ export default function ProductQuickviewModal() {
                       minWidth: "48px",
                       padding: "0.6rem 0.9rem",
                       borderRadius: "var(--radius-sm)",
-                      background: selectedSize === sz ? "var(--accent-champagne)" : "var(--bg-surface-elevated)",
-                      color: selectedSize === sz ? "#0A0A0D" : "var(--text-primary)",
+                      background: selectedSize === sz ? "var(--accent-amethyst)" : "var(--bg-surface-elevated)",
+                      color: selectedSize === sz ? "var(--text-inverse)" : "var(--text-primary)",
                       fontWeight: selectedSize === sz ? 600 : 400,
-                      border: `1px solid ${selectedSize === sz ? "var(--accent-champagne)" : "var(--border-subtle)"}`,
+                      border: `1px solid ${selectedSize === sz ? "var(--accent-amethyst)" : "var(--border-subtle)"}`,
                       cursor: "pointer",
                       transition: "all var(--transition-fast)"
                     }}
@@ -315,7 +315,7 @@ export default function ProductQuickviewModal() {
                 onClick={() => toggleWishlist(quickviewProduct)}
                 aria-label="Wishlist"
               >
-                <Heart size={20} fill={isFavorited ? "currentColor" : "none"} color={isFavorited ? "#FF5A79" : "currentColor"} />
+                <Heart size={20} fill={isFavorited ? "currentColor" : "none"} color={isFavorited ? "var(--state-error)" : "currentColor"} />
               </button>
             </div>
 
@@ -331,11 +331,11 @@ export default function ProductQuickviewModal() {
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <Truck size={14} style={{ color: "var(--accent-champagne)" }} />
+                <Truck size={14} style={{ color: "var(--accent-amethyst)" }} />
                 <span>Complimentary Express Shipping & Discrete Luxury Gift Packaging</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <ShieldCheck size={14} style={{ color: "var(--accent-champagne)" }} />
+                <ShieldCheck size={14} style={{ color: "var(--accent-amethyst)" }} />
                 <span>100-Day Perfect Fit Guarantee (Free exchanges with prepaid label)</span>
               </div>
             </div>

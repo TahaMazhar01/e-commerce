@@ -32,7 +32,7 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.3;
+    renderer.toneMappingExposure = 1.05;
     container.appendChild(renderer.domElement);
 
     // Create 3D Fabric Swatch Object (a curved, realistic fabric drape swatch)
@@ -53,7 +53,7 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
     const getMaterialConfig = () => {
       if (fabricType === "silk") {
         return {
-          color: new THREE.Color("#D4BCA9"),
+          color: new THREE.Color("#efc3e6"),
           roughness: 0.18,
           metalness: 0.5,
           clearcoat: 0.9,
@@ -62,7 +62,7 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
         };
       } else if (fabricType === "sculpt") {
         return {
-          color: new THREE.Color("#4A3B32"),
+          color: new THREE.Color("#9c89b8"),
           roughness: 0.45,
           metalness: 0.15,
           clearcoat: 0.3,
@@ -72,7 +72,7 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
       } else {
         // Micro-modal
         return {
-          color: new THREE.Color("#2E303A"),
+          color: new THREE.Color("#b8bedd"),
           roughness: 0.55,
           metalness: 0.1,
           clearcoat: 0.1,
@@ -91,14 +91,14 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
     scene.add(fabricMesh);
 
     // Inner core light
-    const pointLight = new THREE.PointLight(0xE6D5C3, 3, 8);
+    const pointLight = new THREE.PointLight(0xffffff, 2.6, 8);
     pointLight.position.set(0, 0, 1.5);
     scene.add(pointLight);
 
-    const ambientLight = new THREE.AmbientLight(0x22222D, 2);
+    const ambientLight = new THREE.AmbientLight(0xded4ea, 2.6);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 2.5);
+    const directionalLight = new THREE.DirectionalLight(0xfff4fa, 2.2);
     directionalLight.position.set(3, 4, 3);
     scene.add(directionalLight);
 

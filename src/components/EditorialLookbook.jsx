@@ -38,13 +38,13 @@ export default function EditorialLookbook() {
             style={{ cursor: "pointer" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1634655511368-6cd7213719f4?auto=format&fit=crop&w=1200&q=80"
               alt="Women's Pure Silk Editorial"
               className="lookbook-img"
               loading="lazy"
             />
             <div className="lookbook-caption">
-              <span className="section-eyebrow" style={{ color: "var(--accent-champagne)" }}>
+              <span className="section-eyebrow" style={{ color: "var(--accent-amethyst)" }}>
                 The Silk Reverie
               </span>
               <h3 style={{ fontSize: "1.8rem", marginBottom: "0.4rem" }}>
@@ -53,7 +53,7 @@ export default function EditorialLookbook() {
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "0.8rem" }}>
                 Zero underwires. Uncompromising grace. Draped in 22-momme pure silk.
               </p>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "var(--accent-champagne)", fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "var(--accent-amethyst)", fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
                 <span>Shop The Silk Edit</span>
                 <ArrowRight size={14} />
               </div>
@@ -67,13 +67,13 @@ export default function EditorialLookbook() {
             style={{ cursor: "pointer" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+              src="https://images.unsplash.com/photo-1640765937555-6f413ed1d936?auto=format&fit=crop&w=800&q=80"
               alt="Men's Modal Essentials Editorial"
               className="lookbook-img"
               loading="lazy"
             />
             <div className="lookbook-caption">
-              <span className="section-eyebrow" style={{ color: "var(--accent-rose)" }}>
+              <span className="section-eyebrow" style={{ color: "var(--accent-blush)" }}>
                 Men&apos;s Engineered Essentials
               </span>
               <h3 style={{ fontSize: "1.5rem", marginBottom: "0.4rem" }}>
@@ -82,7 +82,7 @@ export default function EditorialLookbook() {
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "0.8rem" }}>
                 Ergonomic 3D pouch support with zero rolling or chafing.
               </p>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "var(--accent-champagne)", fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "var(--accent-amethyst)", fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
                 <span>Explore Men&apos;s Line</span>
                 <ArrowRight size={14} />
               </div>
