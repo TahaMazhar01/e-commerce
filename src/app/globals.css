@@ -46,7 +46,7 @@
   --border-active: rgba(156, 137, 184, 0.62);
   --border-glow: rgba(240, 166, 202, 0.60);
 
-  --badge-bg: rgba(239, 195, 230, 0.50);
+  --badge-bg: rgba(255, 255, 255, 0.92);
   --badge-text: #9E4470;
 
   /* ---- State -------------------------------------------------------- */
@@ -304,13 +304,15 @@ img {
   border-radius: var(--radius-full);
   background: var(--badge-bg);
   color: var(--badge-text);
-  border: 1px solid rgba(156, 137, 184, 0.2);
+  border: 1px solid rgba(156, 137, 184, 0.45);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(74, 59, 99, 0.10);
 }
 
 .badge-silk {
-  background: rgba(240, 166, 202, 0.15);
-  color: var(--accent-blush-deep);
-  border-color: rgba(240, 166, 202, 0.3);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--accent-amethyst-deep);
+  border-color: rgba(156, 137, 184, 0.45);
 }
 
 /* Announcement Bar */
@@ -817,14 +819,14 @@ img {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
-  background: var(--text-primary);
-  color: var(--text-inverse);
+  background: var(--accent-amethyst-deep);
+  color: var(--text-on-deep);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
 
 .card-quick-add:hover {
-  background: var(--accent-amethyst);
+  background: var(--text-primary);
 }
 
 .product-info {
