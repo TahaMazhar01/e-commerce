@@ -102,16 +102,18 @@ export default function Navbar() {
           </button>
 
           {/* Brand Logo */}
-          <div
+          <button
+            type="button"
             className="nav-brand"
             onClick={() => {
               setActiveDepartment("all");
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
+            aria-label="Aura Intimates - back to top"
           >
             <span className="brand-title">AURA</span>
             <span className="brand-subtitle">INTIMATES</span>
-          </div>
+          </button>
 
           {/* Department Links */}
           <nav className="nav-links" aria-label="Main Navigation">

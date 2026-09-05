@@ -29,9 +29,9 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Col 1: Brand & Philosophy */}
           <div className="footer-col">
-            <div style={{ marginBottom: "1.2rem" }}>
-              <span className="brand-title" style={{ fontSize: "1.8rem" }}>AURA</span>
-              <span className="brand-subtitle" style={{ display: "block" }}>INTIMATES</span>
+            <div className="nav-brand" style={{ alignItems: "flex-start", marginBottom: "1.4rem", fontSize: "2.1rem" }}>
+              <span className="brand-title">AURA</span>
+              <span className="brand-subtitle">INTIMATES</span>
             </div>
             <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: "340px" }}>
               Architectural next-to-skin luxury. Handcrafted from 22-momme pure mulberry silk,

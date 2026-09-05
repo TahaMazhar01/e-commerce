@@ -358,22 +358,33 @@ img {
   align-items: center;
   justify-content: space-between;
   height: 148px;
+  gap: clamp(1rem, 2vw, 2.5rem);
   padding: 0 clamp(1rem, 2vw, 2.5rem);
   max-width: var(--container-max);
   margin: 0 auto;
 }
 
+/* Wordmark lockup: AURA over INTIMATES, tracked so the two lines read as one
+   block. The subtitle's trailing letter-space is cancelled with a negative
+   margin, otherwise wide tracking pushes it visibly off centre. */
 .nav-brand {
+  font-size: clamp(1.45rem, 1.5vw, 1.85rem);
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.34em;
   cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .brand-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 2.5vw, 3.1rem);
-  letter-spacing: 0.22em;
+  font-size: 1em;
+  letter-spacing: 0.24em;
+  margin-right: -0.24em;
   text-transform: uppercase;
   color: var(--text-primary);
   font-weight: 600;
@@ -381,12 +392,15 @@ img {
 }
 
 .brand-subtitle {
-  font-size: clamp(0.68rem, 0.8vw, 1rem);
-  letter-spacing: 0.4em;
+  font-size: 0.385em;
+  letter-spacing: 0.46em;
+  margin-right: -0.46em;
   text-transform: uppercase;
-  color: var(--accent-blush);
-  margin-top: 8px;
-  font-weight: 500;
+  /* the raw brand pink measures 1.8:1 here and is unreadable, so the wordmark
+     takes the deep tint that keeps the pink identity and clears AA */
+  color: var(--accent-blush-deep);
+  font-weight: 600;
+  line-height: 1;
 }
 
 .nav-links {
@@ -1374,11 +1388,8 @@ img {
     height: 104px;
     padding: 0 1.2rem;
   }
-  .brand-title {
-    font-size: 1.9rem;
-  }
-  .brand-subtitle {
-    font-size: 0.62rem;
+  .nav-brand {
+    font-size: 1.55rem;
   }
   .nav-actions {
     gap: 0.45rem;
@@ -1407,13 +1418,8 @@ img {
   .nav-container {
     height: 92px;
   }
-  .brand-title {
-    font-size: 1.55rem;
-    letter-spacing: 0.16em;
-  }
-  .brand-subtitle {
-    font-size: 0.55rem;
-    letter-spacing: 0.28em;
+  .nav-brand {
+    font-size: 1.32rem;
   }
   .icon-btn {
     width: 40px;
