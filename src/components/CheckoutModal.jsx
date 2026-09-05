@@ -88,9 +88,6 @@ export default function CheckoutModal() {
           <div>
             {/* Steps Progress Header */}
             <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-              <span className="section-eyebrow">
-                Checkout
-              </span>
               <h2 id="checkout-modal-title" style={{ fontSize: "1.8rem" }}>
                 {step === 1 ? "Shipping & Delivery Address" : "Payment Authorization"}
               </h2>

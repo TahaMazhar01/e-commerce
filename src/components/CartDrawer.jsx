@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useShop } from "../context/ShopContext";
 import { X, Trash2, ArrowRight, ShieldCheck, Tag, ShoppingBag } from "lucide-react";
-import gsap from "gsap";
 
 export default function CartDrawer() {
   const {
@@ -26,36 +25,29 @@ export default function CartDrawer() {
     setActiveDepartment
   } = useShop();
 
-  const drawerRef = useRef(null);
+  // The slide is a CSS transition on .cart-drawer / .cart-drawer.open. Animating
+  // it with GSAP as well leaves the panel stranded mid-transform whenever the
+  // rAF loop stalls, so the class is the only thing that moves it.
+  const handleClose = () => setIsCartOpen(false);
 
+  // Escape closes the drawer; the page behind it stays put while it is open.
   useEffect(() => {
-    if (isCartOpen && drawerRef.current) {
-      gsap.fromTo(
-        drawerRef.current,
-        { x: "100%" },
-        { x: "0%", duration: 0.45, ease: "power3.out" }
-      );
-    }
-  }, [isCartOpen]);
-
-  const handleClose = () => {
-    if (drawerRef.current) {
-      gsap.to(drawerRef.current, {
-        x: "100%",
-        duration: 0.35,
-        ease: "power3.in",
-        onComplete: () => setIsCartOpen(false)
-      });
-    } else {
-      setIsCartOpen(false);
-    }
-  };
+    if (!isCartOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setIsCartOpen(false);
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isCartOpen, setIsCartOpen]);
 
   const handleCheckoutClick = () => {
     handleClose();
-    setTimeout(() => {
-      setIsCheckoutOpen(true);
-    }, 380);
+    setIsCheckoutOpen(true);
   };
 
   const shippingRemaining = Math.max(0, freeShippingThreshold - cartSubtotal);
@@ -72,10 +64,10 @@ export default function CartDrawer() {
 
       {/* Drawer */}
       <aside
-        ref={drawerRef}
         className={`cart-drawer ${isCartOpen ? "open" : ""}`}
         aria-label="Shopping Bag"
         aria-hidden={!isCartOpen}
+        inert={!isCartOpen}
       >
         {/* Header */}
         <div className="cart-header">

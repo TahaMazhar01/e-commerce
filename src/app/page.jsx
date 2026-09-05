@@ -7,7 +7,7 @@ import ProductCard from "../components/ProductCard";
 import EditorialLookbook from "../components/EditorialLookbook";
 import CustomerReviews from "../components/CustomerReviews";
 import { useShop } from "../context/ShopContext";
-import { Sparkles, ShoppingBag } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 
 export default function StorefrontPage() {
   const { filteredProducts, activeDepartment, searchQuery } = useShop();
@@ -21,10 +21,6 @@ export default function StorefrontPage() {
       <section id="catalog-section" className="catalog-section" aria-label="Curated Intimates Catalog">
         <div className="container">
           <div className="catalog-header">
-            <span className="section-eyebrow">
-              <Sparkles size={13} style={{ display: "inline", verticalAlign: "-2px", marginRight: "4px" }} />
-              Shop the collection
-            </span>
             <h2>Architectural Undergarments & Essentials</h2>
             <p style={{ maxWidth: "580px", margin: "0.6rem auto 0" }}>
               Tailored for men and women. Breathable fabrics engineered to eliminate friction,

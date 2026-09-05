@@ -55,9 +55,13 @@ A full audit of the initial build is tracked separately. The five ship-blockers 
 - Checkout no longer ships with a hardcoded identity or card number
 - The hero headline no longer depends on an animation frame to become visible
 
-Still outstanding, roughly in priority order: a wishlist view, promo state reset after an
-order, product detail routes, modal focus management, a mobile nav menu, a responsive
-checkout grid, lazy-loading for Three.js, and SEO metadata.
+Since fixed: a mobile navigation menu, a wishlist view, Escape and scroll-lock on both
+drawers, and the removal of the duplicated GSAP slide that could strand a drawer
+mid-transform.
+
+Still outstanding, roughly in priority order: promo state reset after an order, product
+detail routes, focus traps on the three modals, a responsive checkout grid, lazy-loading
+for Three.js, and SEO metadata.
 
 ## Notes
 

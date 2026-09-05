@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
-import { X, Ruler, CheckCircle2, Sparkles, HelpCircle } from "lucide-react";
+import { X, CheckCircle2, Sparkles, HelpCircle } from "lucide-react";
 
 export default function SizeGuideModal() {
   const { isSizeGuideOpen, setIsSizeGuideOpen, sizeGuideGender, setSizeGuideGender } = useShop();
@@ -79,12 +79,6 @@ export default function SizeGuideModal() {
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-amethyst)", marginBottom: "0.5rem" }}>
-            <Ruler size={18} />
-            <span style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-              Size guide
-            </span>
-          </div>
           <h2 id="size-guide-title" style={{ fontSize: "2rem" }}>
             Find Your Architectural Fit
           </h2>

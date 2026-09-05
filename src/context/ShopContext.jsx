@@ -15,6 +15,7 @@ export function ShopProvider({ children }) {
 
   // Wishlist State
   const [wishlist, setWishlist] = useState([]);
+  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
 
   // Modals
   const [quickviewProduct, setQuickviewProduct] = useState(null);
@@ -139,6 +140,10 @@ export function ShopProvider({ children }) {
     });
   };
 
+  const clearWishlist = () => {
+    setWishlist([]);
+  };
+
   const isInWishlist = (productId) => {
     return wishlist.some((item) => item.id === productId);
   };
@@ -218,6 +223,9 @@ export function ShopProvider({ children }) {
         wishlist,
         toggleWishlist,
         isInWishlist,
+        isWishlistOpen,
+        setIsWishlistOpen,
+        clearWishlist,
         quickviewProduct,
         setQuickviewProduct,
         isSizeGuideOpen,

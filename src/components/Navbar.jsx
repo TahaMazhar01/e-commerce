@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useShop } from "../context/ShopContext";
 import { Search, ShoppingBag, Heart, Ruler, Sparkles, X, Menu } from "lucide-react";
 
@@ -16,11 +16,20 @@ export default function Navbar() {
     searchQuery,
     setSearchQuery,
     setIsSizeGuideOpen,
-    setSizeGuideGender
+    setSizeGuideGender,
+    setIsWishlistOpen
   } = useShop();
 
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const departments = [
+    { id: "all", label: "All Collections" },
+    { id: "women", label: "Women's Intimates" },
+    { id: "men", label: "Men's Essentials" },
+    { id: "shapewear", label: "Sculpt & Shape" },
+    { id: "loungewear", label: "Silk & Lounge" }
+  ];
 
   const handleDeptSelect = (dept) => {
     setActiveDepartment(dept);
@@ -34,7 +43,33 @@ export default function Navbar() {
   const openSizeGuide = (gender) => {
     setSizeGuideGender(gender);
     setIsSizeGuideOpen(true);
+    setIsMobileMenuOpen(false);
   };
+
+  // Close the menu on Escape and freeze the page behind it while it is open.
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isMobileMenuOpen]);
+
+  // Resizing past the breakpoint should not strand the panel open.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 993px)");
+    const onChange = (e) => {
+      if (e.matches) setIsMobileMenuOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   return (
     <>
@@ -58,11 +93,12 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             className="icon-btn mobile-only"
-            style={{ display: "none" }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Navigation Menu"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <Menu size={28} />
+            {isMobileMenuOpen ? <X size={NAV_ICON} /> : <Menu size={NAV_ICON} />}
           </button>
 
           {/* Brand Logo */}
@@ -79,36 +115,15 @@ export default function Navbar() {
 
           {/* Department Links */}
           <nav className="nav-links" aria-label="Main Navigation">
-            <button
-              className={`nav-link-btn ${activeDepartment === "all" ? "active" : ""}`}
-              onClick={() => handleDeptSelect("all")}
-            >
-              All Collections
-            </button>
-            <button
-              className={`nav-link-btn ${activeDepartment === "women" ? "active" : ""}`}
-              onClick={() => handleDeptSelect("women")}
-            >
-              Women&apos;s Intimates
-            </button>
-            <button
-              className={`nav-link-btn ${activeDepartment === "men" ? "active" : ""}`}
-              onClick={() => handleDeptSelect("men")}
-            >
-              Men&apos;s Essentials
-            </button>
-            <button
-              className={`nav-link-btn ${activeDepartment === "shapewear" ? "active" : ""}`}
-              onClick={() => handleDeptSelect("shapewear")}
-            >
-              Sculpt & Shape
-            </button>
-            <button
-              className={`nav-link-btn ${activeDepartment === "loungewear" ? "active" : ""}`}
-              onClick={() => handleDeptSelect("loungewear")}
-            >
-              Silk & Lounge
-            </button>
+            {departments.map((dept) => (
+              <button
+                key={dept.id}
+                className={`nav-link-btn ${activeDepartment === dept.id ? "active" : ""}`}
+                onClick={() => handleDeptSelect(dept.id)}
+              >
+                {dept.label}
+              </button>
+            ))}
           </nav>
 
           {/* Actions: Search, Size Guide, Wishlist, Cart */}
@@ -120,6 +135,7 @@ export default function Navbar() {
                   <input
                     type="text"
                     placeholder="Search silk, boxers, bralettes..."
+                    aria-label="Search the catalog"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     autoFocus
@@ -140,6 +156,7 @@ export default function Navbar() {
                       setIsSearchVisible(false);
                       setSearchQuery("");
                     }}
+                    aria-label="Close search"
                     style={{
                       position: "absolute",
                       right: "12px",
@@ -174,12 +191,9 @@ export default function Navbar() {
             {/* Wishlist Button */}
             <button
               className="icon-btn"
-              onClick={() => {
-                const catalogEl = document.getElementById("catalog-section");
-                if (catalogEl) catalogEl.scrollIntoView({ behavior: "smooth" });
-              }}
-              aria-label="View Saved Items"
-              title="Saved Items"
+              onClick={() => setIsWishlistOpen(true)}
+              aria-label={`Saved items (${wishlist.length})`}
+              title="Saved items"
             >
               <Heart size={NAV_ICON} />
               {wishlist.length > 0 && (
@@ -191,7 +205,7 @@ export default function Navbar() {
             <button
               className="icon-btn"
               onClick={() => setIsCartOpen(true)}
-              aria-label="Open Shopping Bag"
+              aria-label={`Shopping bag (${cartCount})`}
               title="Shopping Bag"
             >
               <ShoppingBag size={NAV_ICON} />
@@ -202,6 +216,84 @@ export default function Navbar() {
           </div>
         </div>
       </header>
+
+      {/* Mobile navigation. .nav-links is hidden below 992px, so this panel is
+          the only route into the departments and size guides on a phone. */}
+      {isMobileMenuOpen && (
+        <div
+          className="mobile-menu-backdrop"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      <nav
+        id="mobile-menu"
+        className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}
+        aria-label="Mobile Navigation"
+        aria-hidden={!isMobileMenuOpen}
+        inert={!isMobileMenuOpen}
+      >
+        <div className="mobile-menu-head">
+          <span className="mobile-menu-heading">Browse</span>
+          <button
+            className="modal-close-btn"
+            style={{ position: "static" }}
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close navigation menu"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        <ul className="mobile-menu-list">
+          {departments.map((dept) => (
+            <li key={dept.id}>
+              <button
+                className={`mobile-menu-link ${activeDepartment === dept.id ? "active" : ""}`}
+                onClick={() => handleDeptSelect(dept.id)}
+                aria-current={activeDepartment === dept.id ? "true" : undefined}
+              >
+                {dept.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mobile-menu-section">
+          <span className="mobile-menu-heading">Find your fit</span>
+          <button className="mobile-menu-link" onClick={() => openSizeGuide("women")}>
+            <Ruler size={16} />
+            <span>Women&apos;s sizing</span>
+          </button>
+          <button className="mobile-menu-link" onClick={() => openSizeGuide("men")}>
+            <Ruler size={16} />
+            <span>Men&apos;s sizing</span>
+          </button>
+        </div>
+
+        <div className="mobile-menu-section">
+          <button
+            className="mobile-menu-link"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setIsWishlistOpen(true);
+            }}
+          >
+            <Heart size={16} />
+            <span>Saved items ({wishlist.length})</span>
+          </button>
+          <button
+            className="mobile-menu-link"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setIsCartOpen(true);
+            }}
+          >
+            <ShoppingBag size={16} />
+            <span>Shopping bag ({cartCount})</span>
+          </button>
+        </div>
+      </nav>
     </>
   );
 }

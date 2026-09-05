@@ -1487,3 +1487,110 @@ img {
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
+
+/* ---- Mobile navigation ------------------------------------------------
+   .nav-links is hidden below 992px, so the hamburger and this panel are the
+   only route into the departments on a phone. */
+.mobile-only {
+  display: none;
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 34, 51, 0.42);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(84vw, 340px);
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-subtle);
+  box-shadow: 10px 0 35px rgba(74, 59, 99, 0.18);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 1.2rem 2rem;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.mobile-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 0.6rem;
+}
+
+.mobile-menu-heading {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.mobile-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 0.8rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-link:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--accent-amethyst-deep);
+}
+
+.mobile-menu-link.active {
+  background: var(--accent-amethyst);
+  color: var(--text-inverse);
+  font-weight: 600;
+}
+
+.mobile-menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-top: 0.9rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.mobile-menu-section .mobile-menu-heading {
+  padding: 0 0.8rem 0.4rem;
+}
+
+@media (max-width: 992px) {
+  .mobile-only {
+    display: flex;
+  }
+}

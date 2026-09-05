@@ -74,13 +74,6 @@ export default function HeroBanner() {
 
       {/* Hero Editorial Content */}
       <div className="hero-content" ref={heroContentRef}>
-        <div className="gsap-reveal">
-          <span className="hero-tag">
-            <Sparkles size={13} />
-            Silk & modal intimates for men and women
-          </span>
-        </div>
-
         <h1 id="hero-heading" className="hero-title gsap-reveal">
           Pure Second Skin, <em>Elegantly</em> Redefined
         </h1>

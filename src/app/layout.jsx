@@ -2,6 +2,7 @@ import "./globals.css";
 import { ShopProvider } from "../context/ShopContext";
 import Navbar from "../components/Navbar";
 import CartDrawer from "../components/CartDrawer";
+import WishlistDrawer from "../components/WishlistDrawer";
 import ProductQuickviewModal from "../components/ProductQuickviewModal";
 import SizeGuideModal from "../components/SizeGuideModal";
 import CheckoutModal from "../components/CheckoutModal";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
 
           {/* Interactive Modals & Drawers */}
           <CartDrawer />
+          <WishlistDrawer />
           <ProductQuickviewModal />
           <SizeGuideModal />
           <CheckoutModal />

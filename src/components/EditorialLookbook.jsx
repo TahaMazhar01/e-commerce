@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useShop } from "../context/ShopContext";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function EditorialLookbook() {
   const { setActiveDepartment } = useShop();
@@ -19,10 +19,6 @@ export default function EditorialLookbook() {
     <section className="lookbook-section" aria-labelledby="lookbook-title">
       <div className="container">
         <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto" }}>
-          <span className="section-eyebrow">
-            <Sparkles size={13} style={{ display: "inline", verticalAlign: "-2px", marginRight: "4px" }} />
-            Lookbook
-          </span>
           <h2 id="lookbook-title">Where Comfort Meets Haute Couture</h2>
           <p style={{ marginTop: "0.8rem", fontSize: "1rem" }}>
             Undergarments shouldn&apos;t just be an afterthought. Designed with precision seams,
@@ -44,9 +40,6 @@ export default function EditorialLookbook() {
               loading="lazy"
             />
             <div className="lookbook-caption">
-              <span className="section-eyebrow" style={{ color: "var(--accent-amethyst)" }}>
-                Women&apos;s silk
-              </span>
               <h3 style={{ fontSize: "1.8rem", marginBottom: "0.4rem" }}>
                 Weightless Mulberry Silk & Bralettes
               </h3>
@@ -73,9 +66,6 @@ export default function EditorialLookbook() {
               loading="lazy"
             />
             <div className="lookbook-caption">
-              <span className="section-eyebrow" style={{ color: "var(--accent-blush)" }}>
-                Men&apos;s essentials
-              </span>
               <h3 style={{ fontSize: "1.5rem", marginBottom: "0.4rem" }}>
                 The Micro-Modal Boxer Brief
               </h3>
