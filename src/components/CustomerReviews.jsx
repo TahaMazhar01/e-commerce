@@ -9,7 +9,7 @@ export default function CustomerReviews() {
     <section className="reviews-section" aria-labelledby="reviews-heading">
       <div className="container">
         <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto" }}>
-          <span className="section-eyebrow">Client Testimonials</span>
+          <span className="section-eyebrow">Reviews</span>
           <h2 id="reviews-heading" style={{ fontSize: "2.2rem" }}>
             The Second-Skin Experience
           </h2>

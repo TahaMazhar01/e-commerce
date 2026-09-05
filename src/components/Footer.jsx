@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Col 2: Women's Line */}
           <div className="footer-col">
-            <h4>Women&apos;s Atelier</h4>
+            <h4>Women&apos;s</h4>
             <ul className="footer-links">
               <li><button onClick={() => handleNav("women")} className="nav-link-btn">Silk Demi Bralettes</button></li>
               <li><button onClick={() => handleNav("shapewear")} className="nav-link-btn">Sculpting Bodysuits</button></li>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Col 3: Men's Line */}
           <div className="footer-col">
-            <h4>Men&apos;s Atelier</h4>
+            <h4>Men&apos;s</h4>
             <ul className="footer-links">
               <li><button onClick={() => handleNav("men")} className="nav-link-btn">Micro-Modal Boxer Briefs</button></li>
               <li><button onClick={() => handleNav("men")} className="nav-link-btn">Athletic Performance Trunks</button></li>
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Col 4: VIP Newsletter */}
           <div className="footer-col">
-            <h4>Private Client Circle</h4>
+            <h4>Newsletter</h4>
             <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "1rem" }}>
               Receive invitations to private collection previews, seasonal silk color drops, and private vault sales.
             </p>

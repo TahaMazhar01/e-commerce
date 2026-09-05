@@ -82,7 +82,7 @@ export default function SizeGuideModal() {
           <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--accent-amethyst)", marginBottom: "0.5rem" }}>
             <Ruler size={18} />
             <span style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-              Intelligent Fit Assistant
+              Size guide
             </span>
           </div>
           <h2 id="size-guide-title" style={{ fontSize: "2rem" }}>

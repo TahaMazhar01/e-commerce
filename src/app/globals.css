@@ -357,8 +357,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 74px;
-  padding: 0 2rem;
+  height: 148px;
+  padding: 0 clamp(1rem, 2vw, 2.5rem);
   max-width: var(--container-max);
   margin: 0 auto;
 }
@@ -372,7 +372,7 @@ img {
 
 .brand-title {
   font-family: var(--font-serif);
-  font-size: 1.65rem;
+  font-size: clamp(2rem, 2.5vw, 3.1rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text-primary);
@@ -381,30 +381,32 @@ img {
 }
 
 .brand-subtitle {
-  font-size: 0.55rem;
+  font-size: clamp(0.68rem, 0.8vw, 1rem);
   letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--accent-blush);
-  margin-top: 4px;
+  margin-top: 8px;
   font-weight: 500;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.2rem;
+  gap: clamp(0.9rem, 1.5vw, 2.6rem);
+  flex-wrap: nowrap;
 }
 
 .nav-link-btn {
   background: none;
   border: none;
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 0.86vw, 1.1rem);
   font-weight: 500;
+  white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   position: relative;
-  padding: 0.4rem 0;
+  padding: 0.5rem 0;
   transition: color var(--transition-fast);
 }
 
@@ -427,21 +429,28 @@ img {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: clamp(0.6rem, 1vw, 1.5rem);
+  flex-shrink: 0;
 }
 
 .icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: clamp(46px, 3.9vw, 72px);
+  height: clamp(46px, 3.9vw, 72px);
   border-radius: 50%;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
   position: relative;
   background: rgba(42, 34, 51, 0.04);
   border: 1px solid var(--border-subtle);
+}
+
+/* glyphs track the button, which itself tracks the viewport */
+.icon-btn svg {
+  width: clamp(16px, 1.45vw, 26px);
+  height: clamp(16px, 1.45vw, 26px);
 }
 
 .icon-btn:hover {
@@ -453,14 +462,14 @@ img {
 
 .badge-count {
   position: absolute;
-  top: -3px;
-  right: -3px;
-  width: 19px;
-  height: 19px;
+  top: -2px;
+  right: -2px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: var(--accent-amethyst-deep);
   color: var(--text-on-deep);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -1361,6 +1370,23 @@ img {
 
 /* Responsive Media Queries */
 @media (max-width: 992px) {
+  .nav-container {
+    height: 104px;
+    padding: 0 1.2rem;
+  }
+  .brand-title {
+    font-size: 1.9rem;
+  }
+  .brand-subtitle {
+    font-size: 0.62rem;
+  }
+  .nav-actions {
+    gap: 0.45rem;
+  }
+  .icon-btn {
+    width: 46px;
+    height: 46px;
+  }
   .nav-links {
     display: none;
   }
@@ -1378,6 +1404,21 @@ img {
 }
 
 @media (max-width: 640px) {
+  .nav-container {
+    height: 92px;
+  }
+  .brand-title {
+    font-size: 1.55rem;
+    letter-spacing: 0.16em;
+  }
+  .brand-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 0.28em;
+  }
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
   .footer-grid {
     grid-template-columns: 1fr;
   }

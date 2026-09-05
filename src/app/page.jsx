@@ -23,7 +23,7 @@ export default function StorefrontPage() {
           <div className="catalog-header">
             <span className="section-eyebrow">
               <Sparkles size={13} style={{ display: "inline", verticalAlign: "-2px", marginRight: "4px" }} />
-              The Permanent Atelier
+              Shop the collection
             </span>
             <h2>Architectural Undergarments & Essentials</h2>
             <p style={{ maxWidth: "580px", margin: "0.6rem auto 0" }}>

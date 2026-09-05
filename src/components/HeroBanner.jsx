@@ -77,7 +77,7 @@ export default function HeroBanner() {
         <div className="gsap-reveal">
           <span className="hero-tag">
             <Sparkles size={13} />
-            The Next-to-Skin Architecture
+            Silk & modal intimates for men and women
           </span>
         </div>
 

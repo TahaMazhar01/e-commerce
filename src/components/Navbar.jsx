@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
 import { Search, ShoppingBag, Heart, Ruler, Sparkles, X, Menu } from "lucide-react";
 
+const NAV_ICON = 26;
+
 export default function Navbar() {
   const {
     activeDepartment,
@@ -60,7 +62,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
           >
-            <Menu size={20} />
+            <Menu size={28} />
           </button>
 
           {/* Brand Logo */}
@@ -122,15 +124,15 @@ export default function Navbar() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     autoFocus
                     style={{
-                      padding: "0.5rem 2rem 0.5rem 0.9rem",
+                      padding: "0.8rem 2.6rem 0.8rem 1.2rem",
                       background: "rgba(42, 34, 51, 0.06)",
                       border: "1px solid var(--accent-amethyst)",
                       borderRadius: "var(--radius-full)",
                       color: "var(--text-primary)",
-                      fontSize: "0.8rem",
+                      fontSize: "1rem",
                       fontFamily: "var(--font-body)",
                       outline: "none",
-                      width: "210px"
+                      width: "280px"
                     }}
                   />
                   <button
@@ -140,11 +142,11 @@ export default function Navbar() {
                     }}
                     style={{
                       position: "absolute",
-                      right: "8px",
+                      right: "12px",
                       color: "var(--text-secondary)"
                     }}
                   >
-                    <X size={14} />
+                    <X size={18} />
                   </button>
                 </div>
               ) : (
@@ -154,7 +156,7 @@ export default function Navbar() {
                   aria-label="Search Catalog"
                   title="Search Catalog"
                 >
-                  <Search size={18} />
+                  <Search size={NAV_ICON} />
                 </button>
               )}
             </div>
@@ -166,7 +168,7 @@ export default function Navbar() {
               aria-label="Interactive Fit & Size Guide"
               title="Interactive Fit & Size Guide"
             >
-              <Ruler size={18} />
+              <Ruler size={NAV_ICON} />
             </button>
 
             {/* Wishlist Button */}
@@ -179,7 +181,7 @@ export default function Navbar() {
               aria-label="View Saved Items"
               title="Saved Items"
             >
-              <Heart size={18} />
+              <Heart size={NAV_ICON} />
               {wishlist.length > 0 && (
                 <span className="badge-count">{wishlist.length}</span>
               )}
@@ -192,7 +194,7 @@ export default function Navbar() {
               aria-label="Open Shopping Bag"
               title="Shopping Bag"
             >
-              <ShoppingBag size={18} />
+              <ShoppingBag size={NAV_ICON} />
               {cartCount > 0 && (
                 <span className="badge-count">{cartCount}</span>
               )}
