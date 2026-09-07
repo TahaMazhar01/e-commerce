@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
+import useDialog from "../hooks/useDialog";
 import confetti from "canvas-confetti";
 import { X, CheckCircle2, ShieldCheck, Lock, CreditCard, Truck, ArrowRight, Package } from "lucide-react";
 
@@ -25,6 +26,7 @@ export default function CheckoutModal() {
   });
 
   const [orderNumber, setOrderNumber] = useState("");
+  const dialogRef = useDialog(isCheckoutOpen, () => { setIsCheckoutOpen(false); setStep(1); });
 
   if (!isCheckoutOpen) return null;
 
@@ -48,7 +50,7 @@ export default function CheckoutModal() {
           particleCount: 120,
           spread: 80,
           origin: { y: 0.6 },
-          colors: ["#9c89b8", "#f0a6ca", "#efc3e6", "#b8bedd"]
+          colors: ["#244b40", "#c8d4cb", "#ffffff", "#d8dfdf"]
         });
       } catch (err) {
         console.warn("Confetti error", err);
@@ -73,6 +75,7 @@ export default function CheckoutModal() {
     >
       <div
         className="modal-content"
+        ref={dialogRef}
         onClick={(e) => e.stopPropagation()}
         style={{ maxWidth: "680px" }}
       >
@@ -89,19 +92,10 @@ export default function CheckoutModal() {
             {/* Steps Progress Header */}
             <div style={{ textAlign: "center", marginBottom: "2rem" }}>
               <h2 id="checkout-modal-title" style={{ fontSize: "1.8rem" }}>
-                {step === 1 ? "Shipping & Delivery Address" : "Payment Authorization"}
+                {step === 1 ? "Shipping details" : "Payment details"}
               </h2>
 
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "2rem",
-                  marginTop: "1.2rem",
-                  fontSize: "0.8rem"
-                }}
-              >
+              <div className="checkout-steps">
                 <span
                   style={{
                     color: step >= 1 ? "var(--accent-amethyst)" : "var(--text-muted)",
@@ -127,7 +121,7 @@ export default function CheckoutModal() {
             <form onSubmit={handleNextStep}>
               {step === 1 && (
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                  <div className="form-grid">
                     <div>
                       <label style={{ fontSize: "0.75rem", color: "var(--text-secondary)", display: "block", marginBottom: "0.3rem" }}>
                         First Name
@@ -196,7 +190,7 @@ export default function CheckoutModal() {
                     />
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "1rem" }}>
+                  <div className="form-grid form-grid-address">
                     <div>
                       <label style={{ fontSize: "0.75rem", color: "var(--text-secondary)", display: "block", marginBottom: "0.3rem" }}>
                         City
@@ -289,7 +283,7 @@ export default function CheckoutModal() {
                   <div
                     style={{
                       padding: "1rem 1.4rem",
-                      background: "rgba(156, 137, 184, 0.14)",
+                      background: "rgba(36, 75, 64, 0.08)",
                       borderRadius: "var(--radius-sm)",
                       border: "1px solid var(--border-active)",
                       display: "flex",
@@ -325,7 +319,7 @@ export default function CheckoutModal() {
                           style={{
                             padding: "0.8rem",
                             borderRadius: "var(--radius-sm)",
-                            background: formData.paymentMethod === m ? "rgba(156, 137, 184, 0.22)" : "var(--bg-surface-elevated)",
+                            background: formData.paymentMethod === m ? "rgba(36, 75, 64, 0.12)" : "var(--bg-surface-elevated)",
                             border: `1px solid ${formData.paymentMethod === m ? "var(--accent-amethyst)" : "var(--border-subtle)"}`,
                             color: formData.paymentMethod === m ? "var(--accent-amethyst)" : "var(--text-primary)",
                             fontWeight: 600,
@@ -362,7 +356,7 @@ export default function CheckoutModal() {
                         />
                       </div>
 
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                      <div className="form-grid">
                         <div>
                           <label style={{ fontSize: "0.75rem", color: "var(--text-secondary)", display: "block", marginBottom: "0.3rem" }}>
                             Expiration Date

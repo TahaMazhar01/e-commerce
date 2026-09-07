@@ -1,124 +1,46 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import SilkHeroCanvas from "./SilkHeroCanvas";
+import { ArrowRight, ArrowDown, Truck, PackageCheck, Ruler, Feather } from "lucide-react";
 import { useShop } from "../context/ShopContext";
-import { ShieldCheck, Feather, Sparkles, RefreshCw, ArrowRight } from "lucide-react";
-import gsap from "gsap";
 
 export default function HeroBanner() {
-  const { setActiveDepartment } = useShop();
-  const heroContentRef = useRef(null);
-
-  useEffect(() => {
-    const container = heroContentRef.current;
-    if (!container) return;
-
-    const elements = container.querySelectorAll(".gsap-reveal");
-    const reveal = () => gsap.set(elements, { clearProps: "all" });
-
-    // The headline and both CTAs are the most important content on the page, so
-    // they must never depend on a tween finishing. Skip the animation entirely
-    // for reduced-motion users, and keep a timer that reveals them outright if
-    // the rAF loop stalls (background tab, throttled frame, GSAP failing to run).
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const tween = gsap.fromTo(
-      elements,
-      {
-        opacity: 0,
-        y: 35,
-        scale: 0.98
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1.1,
-        stagger: 0.18,
-        ease: "power3.out",
-        delay: 0.2,
-        onComplete: reveal
-      }
-    );
-
-    const failsafe = setTimeout(() => {
-      if (tween.progress() < 1) {
-        tween.kill();
-        reveal();
-      }
-    }, 2600);
-
-    return () => {
-      clearTimeout(failsafe);
-      tween.kill();
-      reveal();
-    };
-  }, []);
-
-  const handleCtaClick = (dept) => {
-    setActiveDepartment(dept);
-    const catalogEl = document.getElementById("catalog-section");
-    if (catalogEl) {
-      catalogEl.scrollIntoView({ behavior: "smooth" });
-    }
+  const { setActiveDepartment, setSearchQuery } = useShop();
+  const shopCollection = (department) => {
+    setActiveDepartment(department);
+    setSearchQuery("");
   };
 
   return (
-    <section className="hero-section" aria-labelledby="hero-heading">
-      {/* Three.js Interactive Procedural Silk Background */}
-      <SilkHeroCanvas />
-
-      {/* Radial Depth Vignette */}
-      <div className="hero-overlay" />
-
-      {/* Hero Editorial Content */}
-      <div className="hero-content" ref={heroContentRef}>
-        <h1 id="hero-heading" className="hero-title gsap-reveal">
-          Pure Second Skin, <em>Elegantly</em> Redefined
-        </h1>
-
-        <p className="hero-desc gsap-reveal">
-          Engineered from 22-momme Grade 6A pure mulberry silk, breathable Austrian micro-modal,
-          and seamless architectural shapewear for men and women. Luxury you never want to take off.
-        </p>
-
-        <div className="hero-cta-group gsap-reveal">
-          <button
-            className="btn-primary"
-            onClick={() => handleCtaClick("women")}
-          >
-            <span>Explore Women&apos;s Intimates</span>
-            <ArrowRight size={15} />
-          </button>
-          <button
-            className="btn-secondary"
-            onClick={() => handleCtaClick("men")}
-          >
-            <span>Explore Men&apos;s Essentials</span>
-          </button>
+    <>
+      <section className="campaign-hero" aria-labelledby="hero-title">
+        <picture>
+          <source media="(max-width: 640px)" srcSet="/images/aura-silk-mobile.webp" />
+          <img className="campaign-image" src="/images/aura-silk-campaign.webp" alt="Pearl silk camisole and flowing lounge trousers in natural light" width="1536" height="1024" fetchPriority="high" />
+        </picture>
+        <div className="container campaign-layout">
+          <div className="campaign-copy">
+            <span className="section-eyebrow">THE EVERYDAY COLLECTION</span>
+            <h1 id="hero-title">Intimates &amp;<br /><em>loungewear.</em></h1>
+            <p className="campaign-description">A softer kind of everyday. Thoughtfully made essentials in silk, modal, and everything you love to live in.</p>
+            <div className="campaign-actions">
+              <a className="btn-primary" href="#catalog-section" onClick={() => shopCollection("women")}>Shop women <ArrowRight size={17} /></a>
+              <a className="campaign-secondary" href="#catalog-section" onClick={() => shopCollection("men")}>Shop men <ArrowRight size={17} /></a>
+            </div>
+          </div>
+          <div className="campaign-bottom">
+            <a href="#catalog-section" className="campaign-discover" onClick={() => shopCollection("all")}><ArrowDown size={16} /> Discover your everyday essentials</a>
+            <a href="#catalog-section" className="campaign-edit" onClick={() => shopCollection("loungewear")}><span>The silk edit</span><ArrowRight size={18} /></a>
+          </div>
         </div>
-
-        {/* Feature Highlights Bar */}
-        <div className="hero-features-bar gsap-reveal">
-          <div className="hero-feature-item">
-            <Feather size={16} />
-            <span>Grade 6A Mulberry Silk</span>
-          </div>
-          <div className="hero-feature-item">
-            <Sparkles size={16} />
-            <span>Ergonomic 3D Contour Fit</span>
-          </div>
-          <div className="hero-feature-item">
-            <ShieldCheck size={16} />
-            <span>Zero-Chafe & Seamless</span>
-          </div>
-          <div className="hero-feature-item">
-            <RefreshCw size={16} />
-            <span>Complimentary 100-Day Exchanges</span>
-          </div>
+      </section>
+      <div className="service-strip" aria-label="Shopping benefits">
+        <div className="container service-grid">
+          <span><Truck size={20} strokeWidth={1.5} /> Free shipping over $75</span>
+          <span><PackageCheck size={20} strokeWidth={1.5} /> Discreet packaging</span>
+          <span><Ruler size={20} strokeWidth={1.5} /> 100-day fit exchanges</span>
+          <span><Feather size={20} strokeWidth={1.5} /> Considered fabrics</span>
         </div>
       </div>
-    </section>
+    </>
   );
 }

@@ -10,9 +10,9 @@ import Footer from "../components/Footer";
 import ToastNotification from "../components/ToastNotification";
 
 export const metadata = {
-  title: "AURA INTIMATES | Architectural Next-to-Skin Luxury for Men & Women",
+  title: "AURA Intimates | Everyday Intimates & Silk Loungewear",
   description:
-    "Discover pure luxury undergarments, seamless sculpting shapewear, and breathable micro-modal essentials for men and women. Engineered with Three.js 3D fabric technology.",
+    "Discover a softer kind of everyday with AURA. Shop silk intimates, breathable modal essentials, shapewear, and loungewear for women and men.",
   keywords: [
     "luxury underwear",
     "mulberry silk bralette",
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>

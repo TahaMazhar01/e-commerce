@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
+import useDialog from "../hooks/useDialog";
 import { X, CheckCircle2, Sparkles, HelpCircle } from "lucide-react";
 
 export default function SizeGuideModal() {
@@ -16,6 +17,7 @@ export default function SizeGuideModal() {
   // Men's calculator state
   const [menWaist, setMenWaist] = useState(32);
   const [fitPreference, setFitPreference] = useState("support"); // 'support' or 'relaxed'
+  const dialogRef = useDialog(isSizeGuideOpen, () => setIsSizeGuideOpen(false));
 
   // The modal lives in the root layout and never unmounts, so activeTab cannot be
   // seeded from useState alone - it would freeze on whatever gender was set at first
@@ -66,6 +68,7 @@ export default function SizeGuideModal() {
     >
       <div
         className="modal-content"
+        ref={dialogRef}
         onClick={(e) => e.stopPropagation()}
         style={{ maxWidth: "800px" }}
       >
@@ -80,7 +83,7 @@ export default function SizeGuideModal() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <h2 id="size-guide-title" style={{ fontSize: "2rem" }}>
-            Find Your Architectural Fit
+            Find your fit
           </h2>
           <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", maxWidth: "520px", margin: "0.5rem auto 0" }}>
             Because second-skin comfort demands precision. Use our interactive fit calculator
@@ -123,7 +126,7 @@ export default function SizeGuideModal() {
                 Interactive Bralette & Bodysuit Calculator
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+              <div className="form-grid">
                 <div>
                   <label style={{ display: "block", fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "0.4rem" }}>
                     Band Measurement (Inches): <strong>{bandMeasurement}&quot;</strong>
@@ -177,7 +180,7 @@ export default function SizeGuideModal() {
                 style={{
                   marginTop: "1.5rem",
                   padding: "1rem 1.4rem",
-                  background: "rgba(156, 137, 184, 0.14)",
+                  background: "rgba(36, 75, 64, 0.08)",
                   border: "1px solid var(--border-active)",
                   borderRadius: "var(--radius-sm)",
                   display: "flex",
@@ -186,7 +189,7 @@ export default function SizeGuideModal() {
                 }}
               >
                 <div>
-                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent-blush)" }}>
+                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: 0, color: "var(--accent-blush)" }}>
                     Your Recommended Aura Size:
                   </span>
                   <div style={{ fontSize: "1.4rem", fontFamily: "var(--font-serif)", color: "var(--text-primary)" }}>
@@ -269,7 +272,7 @@ export default function SizeGuideModal() {
                 Interactive Boxer Brief & Trunk Calculator
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+              <div className="form-grid">
                 <div>
                   <label style={{ display: "block", fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "0.4rem" }}>
                     Waist Measurement: <strong>{menWaist}&quot; ({Math.round(menWaist * 2.54)} cm)</strong>
@@ -337,7 +340,7 @@ export default function SizeGuideModal() {
                 style={{
                   marginTop: "1.5rem",
                   padding: "1rem 1.4rem",
-                  background: "rgba(156, 137, 184, 0.14)",
+                  background: "rgba(36, 75, 64, 0.08)",
                   border: "1px solid var(--border-active)",
                   borderRadius: "var(--radius-sm)",
                   display: "flex",
@@ -346,7 +349,7 @@ export default function SizeGuideModal() {
                 }}
               >
                 <div>
-                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent-blush)" }}>
+                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: 0, color: "var(--accent-blush)" }}>
                     Your Tailored Recommendation:
                   </span>
                   <div style={{ fontSize: "1.4rem", fontFamily: "var(--font-serif)", color: "var(--text-primary)" }}>

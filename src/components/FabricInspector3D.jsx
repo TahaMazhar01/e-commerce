@@ -22,7 +22,7 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
       0.1,
       100
     );
-    camera.position.set(0, 0, 4.2);
+    camera.position.set(0, 0, Math.max(4.2, 4.2 / camera.aspect));
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -111,6 +111,7 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
 
     const onMouseDown = (e) => {
       isDragging = true;
+      container.setPointerCapture(e.pointerId);
       prevMouseX = e.clientX;
       prevMouseY = e.clientY;
     };
@@ -129,9 +130,10 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
       isDragging = false;
     };
 
-    container.addEventListener("mousedown", onMouseDown);
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseup", onMouseUp);
+    container.addEventListener("pointerdown", onMouseDown);
+    container.addEventListener("pointermove", onMouseMove);
+    container.addEventListener("pointerup", onMouseUp);
+    container.addEventListener("pointercancel", onMouseUp);
 
     // Animation Loop
     let clock = new THREE.Clock();
@@ -175,6 +177,7 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
     const onResize = () => {
       if (!container) return;
       camera.aspect = container.clientWidth / container.clientHeight;
+      camera.position.z = Math.max(4.2, 4.2 / camera.aspect);
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
     };
@@ -182,9 +185,10 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
 
     return () => {
       cancelAnimationFrame(animId);
-      container.removeEventListener("mousedown", onMouseDown);
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseup", onMouseUp);
+      container.removeEventListener("pointerdown", onMouseDown);
+      container.removeEventListener("pointermove", onMouseMove);
+      container.removeEventListener("pointerup", onMouseUp);
+      container.removeEventListener("pointercancel", onMouseUp);
       window.removeEventListener("resize", onResize);
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
@@ -199,10 +203,10 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
     <div className="fabric-inspector-container" style={{ cursor: "grab" }}>
       <div className="inspector-badge">
         <Rotate3D size={14} />
-        <span>3D Material Inspector • Drag to Rotate 360°</span>
+        <span>Fabric study</span>
       </div>
 
-      <div ref={mountRef} style={{ width: "100%", height: "100%" }} />
+      <div ref={mountRef} style={{ width: "100%", height: "100%", touchAction: "none" }} aria-label={`${productName} fabric preview`} />
 
       <div className="inspector-controls">
         <button
@@ -210,21 +214,21 @@ export default function FabricInspector3D({ fabricType = "silk", productName = "
           onClick={() => setViewMode("sheen")}
         >
           <Sparkles size={12} style={{ display: "inline", marginRight: "4px" }} />
-          Satin Sheen
+          Sheen
         </button>
         <button
           className={`control-chip ${viewMode === "weave" ? "active" : ""}`}
           onClick={() => setViewMode("weave")}
         >
           <Layers size={12} style={{ display: "inline", marginRight: "4px" }} />
-          Fiber Weave
+          Weave
         </button>
         <button
           className={`control-chip ${viewMode === "stretch" ? "active" : ""}`}
           onClick={() => setViewMode("stretch")}
         >
           <Activity size={12} style={{ display: "inline", marginRight: "4px" }} />
-          Stretch Tension
+          Stretch
         </button>
       </div>
     </div>

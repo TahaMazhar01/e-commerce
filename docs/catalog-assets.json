@@ -1,0 +1,126 @@
+{
+  "generator": "Built-in image generation",
+  "purpose": "Illustrative ecommerce product concepts, not verified inventory photography",
+  "assets": [
+    {
+      "productId": "w-01",
+      "file": "public/images/products/w-01-champagne.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A wireless demi bralette, slim adjustable straps, softly curved lightly structured cups, wide micro-mesh underband, elegant pure silk satin body. Color: champagne pale gold silk. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-01",
+      "file": "public/images/products/w-01-black.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A wireless demi bralette, slim adjustable straps, softly curved lightly structured cups, wide micro-mesh underband, elegant pure silk satin body. Color: obsidian black silk. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-01",
+      "file": "public/images/products/w-01-blush.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A wireless demi bralette, slim adjustable straps, softly curved lightly structured cups, wide micro-mesh underband, elegant pure silk satin body. Color: soft blush pink silk. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-02",
+      "file": "public/images/products/w-02-mocha.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A sleeveless sculpting shapewear bodysuit, wide tank shoulder straps, scoop neckline, flattering high-cut hips, opaque smooth compression microfiber with subtle anatomical contour seams. Color: mocha brown. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-02",
+      "file": "public/images/products/w-02-black.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A sleeveless sculpting shapewear bodysuit, wide tank shoulder straps, scoop neckline, flattering high-cut hips, opaque smooth compression microfiber with subtle anatomical contour seams. Color: espresso black. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-02",
+      "file": "public/images/products/w-02-sand.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A sleeveless sculpting shapewear bodysuit, wide tank shoulder straps, scoop neckline, flattering high-cut hips, opaque smooth compression microfiber with subtle anatomical contour seams. Color: sienna light nude. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-03",
+      "file": "public/images/products/w-03-pastel.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A set of three women's seamless bikini briefs, laser-cut raw edges, arranged in a neat overlapping fan with all three waistbands visible, premium opaque matte microfiber. Color: one pale lavender gray, one pale orchid pink, one blush pink. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-03",
+      "file": "public/images/products/w-03-black.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A set of three women's seamless bikini briefs, laser-cut raw edges, arranged in a neat overlapping fan with all three waistbands visible, premium opaque matte microfiber. Color: three obsidian black briefs. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-04",
+      "file": "public/images/products/w-04-amethyst.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: An elegant bias-cut flowing mid-calf silk lounge slip dress, narrow adjustable straps, softly draped cowl neckline, relaxed silhouette with fine delicate seams. Color: muted amethyst purple silk charmeuse. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-04",
+      "file": "public/images/products/w-04-champagne.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: An elegant bias-cut flowing mid-calf silk lounge slip dress, narrow adjustable straps, softly draped cowl neckline, relaxed silhouette with fine delicate seams. Color: champagne pale gold silk charmeuse. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-05",
+      "file": "public/images/products/w-05-orchid.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A wireless triangle bralette made of fine ribbed modal jersey, two simple triangle cups, slim straps and a wide soft elastic underband, breathable knit texture. Color: pale orchid pink. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "w-05",
+      "file": "public/images/products/w-05-periwinkle.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A wireless triangle bralette made of fine ribbed modal jersey, two simple triangle cups, slim straps and a wide soft elastic underband, breathable knit texture. Color: muted periwinkle blue heather. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-01",
+      "file": "public/images/products/m-01-charcoal.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A men's pair of premium boxer briefs, mid-thigh legs, ergonomic contour pouch with tasteful seams, wide completely plain elastic waistband, fine soft micro-modal jersey texture. Color: charcoal heather gray. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-01",
+      "file": "public/images/products/m-01-black.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A men's pair of premium boxer briefs, mid-thigh legs, ergonomic contour pouch with tasteful seams, wide completely plain elastic waistband, fine soft micro-modal jersey texture. Color: obsidian black. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-01",
+      "file": "public/images/products/m-01-navy.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A men's pair of premium boxer briefs, mid-thigh legs, ergonomic contour pouch with tasteful seams, wide completely plain elastic waistband, fine soft micro-modal jersey texture. Color: midnight navy. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-02",
+      "file": "public/images/products/m-02-black.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A men's pair of athletic performance trunks, shorter legs, plain wide elastic waistband, anatomical contour front and subtle micro-perforated mesh panels. Color: carbon black. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-02",
+      "file": "public/images/products/m-02-steel.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A men's pair of athletic performance trunks, shorter legs, plain wide elastic waistband, anatomical contour front and subtle micro-perforated mesh panels. Color: steel blue-gray. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-03",
+      "file": "public/images/products/m-03-trio.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A three-pack of men's premium Supima cotton trunks, arranged in a neat overlapping fan with three plain elastic waistbands visible, fine cotton jersey texture. Color: one black pair, one pale light gray pair, one charcoal heather pair. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-04",
+      "file": "public/images/products/m-04-black.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: An elegant men's kimono lounge robe, long sleeves and knee length, folded silk shawl lapels, self tie belt loosely knotted in front, relaxed drape, heavyweight modal body. Color: obsidian black with thin champagne gold silk lapel trim. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-04",
+      "file": "public/images/products/m-04-navy.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: An elegant men's kimono lounge robe, long sleeves and knee length, folded silk shawl lapels, self tie belt loosely knotted in front, relaxed drape, heavyweight modal body. Color: midnight sapphire blue with tonal silk lapels. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-05",
+      "file": "public/images/products/m-05-graphite.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A pair of men's relaxed sleep shorts, mid-thigh length, soft elastic waistband with a subtle drawstring, concealed side pockets, seamless clean hems, soft modal jersey. Color: graphite gray melange. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "m-05",
+      "file": "public/images/products/m-05-pearl.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: A pair of men's relaxed sleep shorts, mid-thigh length, soft elastic waistband with a subtle drawstring, concealed side pockets, seamless clean hems, soft modal jersey. Color: pearl pale light gray. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "u-01",
+      "file": "public/images/products/u-01-champagne.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: An ergonomic contoured silk sleep mask, padded three-dimensional oval eye cups and an adjustable fabric strap arranged neatly behind it, silk satin sheen, viewed from the front and slightly above. Color: champagne pale gold silk. Show just the specified product, all edges visible, neutral accurate color balance."
+    },
+    {
+      "productId": "u-01",
+      "file": "public/images/products/u-01-amethyst.webp",
+      "prompt": "Use case: product-mockup. Single premium ecommerce catalog studio photograph, portrait 1024x1360. Product only, no people or mannequin visible. Entire item centered with generous consistent margins, unobstructed, accurately shaped. Light warm-gray seamless studio background, softly diffused daylight from upper left, faint realistic contact shadow. Photoreal fine fabric detail, clean contemporary fashion catalog styling. No props, no text, no logos, no visible brand names, no tags, no decorative fabric background. Front view, garment laid naturally flat or invisible mannequin with subtle dimensional shape. Subject: An ergonomic contoured silk sleep mask, padded three-dimensional oval eye cups and an adjustable fabric strap arranged neatly behind it, silk satin sheen, viewed from the front and slightly above. Color: muted amethyst purple silk. Show just the specified product, all edges visible, neutral accurate color balance."
+    }
+  ]
+}

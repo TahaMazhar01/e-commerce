@@ -73,7 +73,7 @@ export default function CartDrawer() {
         <div className="cart-header">
           <div>
             <h3>Shopping Bag</h3>
-            <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.05em" }}>
+            <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: 0 }}>
               {cart.reduce((a, b) => a + b.quantity, 0)} Luxury Items
             </span>
           </div>
@@ -280,7 +280,7 @@ export default function CartDrawer() {
               style={{ width: "100%", marginTop: "1rem", padding: "1rem" }}
               onClick={handleCheckoutClick}
             >
-              <span>Proceed to Luxury Checkout</span>
+              <span>Continue to checkout</span>
               <ArrowRight size={15} />
             </button>
 
@@ -296,7 +296,7 @@ export default function CartDrawer() {
               }}
             >
               <ShieldCheck size={13} style={{ color: "var(--accent-amethyst)" }} />
-              <span>256-bit Encrypted Discreet Checkout</span>
+              <span>Shipping and discounts calculated in your bag</span>
             </div>
           </div>
         )}

@@ -61,7 +61,7 @@ export default function WishlistDrawer() {
         <div className="cart-header">
           <div>
             <h3>Saved Items</h3>
-            <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.05em" }}>
+            <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: 0 }}>
               {wishlist.length} {wishlist.length === 1 ? "piece" : "pieces"} saved
             </span>
           </div>

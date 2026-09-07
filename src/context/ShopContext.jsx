@@ -196,7 +196,7 @@ export function ShopProvider({ children }) {
     if (sortBy === "price-low") return a.price - b.price;
     if (sortBy === "price-high") return b.price - a.price;
     if (sortBy === "rating") return b.rating - a.rating;
-    return 0; // featured default
+    return Number(b.isFeatured) - Number(a.isFeatured);
   });
 
   return (

@@ -2,8 +2,14 @@
 
 import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
-import FabricInspector3D from "./FabricInspector3D";
+import dynamic from "next/dynamic";
+import useDialog from "../hooks/useDialog";
 import { X, Star, Heart, Check, Ruler, ShieldCheck, Truck, Rotate3D, Eye } from "lucide-react";
+
+const FabricInspector3D = dynamic(() => import("./FabricInspector3D"), {
+  ssr: false,
+  loading: () => <div className="fabric-inspector-container flex-center" role="status">Loading fabric view...</div>
+});
 
 export default function ProductQuickviewModal() {
   const {
@@ -24,11 +30,12 @@ export default function ProductQuickviewModal() {
   );
   const [quantity, setQuantity] = useState(1);
   const [show3DInspector, setShow3DInspector] = useState(false);
+  const dialogRef = useDialog(Boolean(quickviewProduct), () => setQuickviewProduct(null));
 
   // Sync state if quickviewProduct changes
   React.useEffect(() => {
     if (quickviewProduct) {
-      setSelectedColor(quickviewProduct.colors[0]);
+      setSelectedColor(quickviewProduct.colors.find(color => color.name === quickviewProduct.initialColorName) || quickviewProduct.colors[0]);
       setSelectedSize(quickviewProduct.sizes[0]);
       setQuantity(1);
       setShow3DInspector(false);
@@ -59,6 +66,7 @@ export default function ProductQuickviewModal() {
     >
       <div
         className="modal-content"
+        ref={dialogRef}
         onClick={(e) => e.stopPropagation()}
         style={{ maxWidth: "980px" }}
       >
@@ -71,17 +79,11 @@ export default function ProductQuickviewModal() {
           <X size={18} />
         </button>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
-            gap: "2.5rem"
-          }}
-        >
+        <div className="quickview-grid">
           {/* Visual Column: Image or 3D Inspector */}
           <div>
             {/* View Mode Toggle: 2D Photo vs 3D Fabric Inspector */}
-            <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
+            <div className="quickview-view-switch" role="group" aria-label="Product view">
               <button
                 className={`btn-secondary ${!show3DInspector ? "active" : ""}`}
                 style={{
@@ -90,9 +92,10 @@ export default function ProductQuickviewModal() {
                   borderColor: !show3DInspector ? "var(--accent-amethyst)" : "var(--border-subtle)"
                 }}
                 onClick={() => setShow3DInspector(false)}
+                aria-pressed={!show3DInspector}
               >
                 <Eye size={14} />
-                <span>Editorial Image</span>
+                <span>Photo</span>
               </button>
               <button
                 className={`btn-secondary ${show3DInspector ? "active" : ""}`}
@@ -102,9 +105,10 @@ export default function ProductQuickviewModal() {
                   borderColor: show3DInspector ? "var(--accent-amethyst)" : "var(--border-subtle)"
                 }}
                 onClick={() => setShow3DInspector(true)}
+                aria-pressed={show3DInspector}
               >
                 <Rotate3D size={14} />
-                <span>3D Fabric & Weave Inspector</span>
+                <span>Fabric</span>
               </button>
             </div>
 
@@ -132,7 +136,7 @@ export default function ProductQuickviewModal() {
             )}
 
             {/* Thumbnail color selectors */}
-            <div style={{ display: "flex", gap: "0.8rem", marginTop: "1rem" }}>
+            <div className="quickview-colors">
               {quickviewProduct.colors.map((col) => (
                 <button
                   key={col.name}
@@ -146,7 +150,7 @@ export default function ProductQuickviewModal() {
                     gap: "0.4rem",
                     padding: "0.4rem 0.7rem",
                     borderRadius: "var(--radius-sm)",
-                    background: selectedColor?.name === col.name ? "rgba(156, 137, 184, 0.22)" : "var(--bg-surface-elevated)",
+                    background: selectedColor?.name === col.name ? "rgba(36, 75, 64, 0.12)" : "var(--bg-surface-elevated)",
                     border: `1px solid ${selectedColor?.name === col.name ? "var(--accent-amethyst)" : "var(--border-subtle)"}`,
                     color: "var(--text-primary)",
                     fontSize: "0.75rem",
@@ -232,7 +236,7 @@ export default function ProductQuickviewModal() {
             {/* Size Selector + Size Guide Link */}
             <div>
               <div className="flex-between" style={{ marginBottom: "0.6rem" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                <span style={{ fontSize: "0.85rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: 0 }}>
                   Select Size: <strong style={{ color: "var(--accent-amethyst)" }}>{selectedSize}</strong>
                 </span>
                 <button
@@ -276,7 +280,7 @@ export default function ProductQuickviewModal() {
             </div>
 
             {/* Quantity Stepper & Add to Bag */}
-            <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginTop: "0.5rem" }}>
+            <div className="quickview-purchase">
               <div
                 style={{
                   display: "flex",
